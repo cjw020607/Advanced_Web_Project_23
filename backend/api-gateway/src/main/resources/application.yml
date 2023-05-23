@@ -1,5 +1,5 @@
 server:
-    port: 7000
+    port: 1000
 
 spring:
     application:
@@ -38,7 +38,7 @@ spring:
 eureka:
     client:
         service-url:
-            defaultZone: http://localhost:7761/eureka/
+            defaultZone: http://localhost:1761/eureka/
 
 springdoc:
     swagger-ui:
