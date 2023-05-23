@@ -1,0 +1,27 @@
+server:
+    port: 7002
+
+spring:
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://127.0.0.1:3306/gcumall?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=UTF-8&characterSetResults=UTF-8&allowPublicKeyRetrieval=true&useSSL=false
+        username: root
+        password: gachon
+
+    jpa:
+        hibernate:
+            ddl-auto: create
+    
+    application:
+        name: crawling-service
+
+eureka:
+    instance:
+        ip-address: 127.0.0.1
+        prefer-ip-address: true
+        lease-renewal-interval-in-seconds: 30
+    client:
+        registerWithEureka: true
+        fetchRegistry: true
+        serviceUrl:
+            defaultZone: http://localhost:7761/eureka/

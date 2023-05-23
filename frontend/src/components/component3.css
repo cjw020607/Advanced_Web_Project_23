@@ -1,0 +1,28 @@
+.container {
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    padding: 0 48px;
+    max-width: 1312px;
+    box-sizing: border-box;
+}
+
+.title-h1 {
+    font-size: 72px;
+    font-weight: 700;
+    color: #000;
+    /* line-height: 1.5; */
+    /* flex-grow: 1; */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.ui-menu-img-text {
+    display: -moz-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 120px;
+    box-sizing: border-box;
+}

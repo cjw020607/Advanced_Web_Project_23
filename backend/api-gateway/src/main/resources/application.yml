@@ -1,0 +1,45 @@
+server:
+    port: 7000
+
+spring:
+    application:
+        name: api-gateway
+    cloud:
+        gateway:
+            routes:
+                -   id: asking-service # 구분하기 위한 id값으로 임의로 작성해도 무관
+                    predicates: # 조건
+                        - Path=/asking/** # first-service/ 으로 요청이 들어오면 
+                    uri: lb://ASKING-SERVICE
+                    filters:
+                        - RewritePath=/asking/(?<segment>.*), /$\{segment} # first-service/ 를 제거하고 요청을 보낸다.
+                -   id: crawling-service
+                    predicates:
+                        - Path=/crawling/**
+                    uri: lb://CRAWLING-SERVICE
+                    filters:
+                        - RewritePath=/crawling/(?<segment>.*), /$\{segment}
+            default-filters:
+            - DedupeResponseHeader=Access-Control-Allow-Origin, Access-Control-Allow-Methods, Access-Control-Allow-Headers, Access-Control-Max-Age, Access-Control-Request-Headers, Access-Control-Request-Method
+
+            globalcors:
+                corsConfigurations:
+                    '[/**]':
+                        allowedOrigins: "*"
+                        allowedMethods:
+                        - GET
+                        - POST
+                        - PUT
+                        - DELETE
+                        - OPTIONS
+                        allowedHeaders:
+                        - "*"
+
+eureka:
+    client:
+        service-url:
+            defaultZone: http://localhost:7761/eureka/
+
+springdoc:
+    swagger-ui:
+        path: /swagger
