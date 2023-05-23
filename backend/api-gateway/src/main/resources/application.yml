@@ -16,12 +16,24 @@ spring:
                     uri: lb://ASKING-SERVICE
                     filters:
                         - RewritePath=/asking/(?<segment>.*), /$\{segment} # first-service/ 를 제거하고 요청을 보낸다.
+                -   id: asking-swagger
+                    predicates:
+                        - Path=/v3/api-docs/asking
+                    uri: lb://ASKING-SERVICE
+                    filters:
+                        - RewritePath=/v3/api-docs/asking, /v3/api-docs
                 -   id: crawling-service
                     predicates:
                         - Path=/crawling/**
                     uri: lb://CRAWLING-SERVICE
                     filters:
                         - RewritePath=/crawling/(?<segment>.*), /$\{segment}
+                -   id: crawling-swagger
+                    predicates:
+                        - Path=/v3/api-docs/crawling
+                    uri: lb://CRAWLING-SERVICE
+                    filters:
+                        - RewritePath=/v3/api-docs/crawling, /v3/api-docs
             default-filters:
             - DedupeResponseHeader=Access-Control-Allow-Origin Access-Control-Allow-Methods Access-Control-Allow-Headers Access-Control-Max-Age Access-Control-Request-Headers Access-Control-Request-Method
 
@@ -39,10 +51,14 @@ spring:
                         - "*"
 
 eureka:
+    instance:
+        ip-address: 127.0.0.1
+        prefer-ip-address: true
+        lease-renewal-interval-in-seconds: 30
     client:
-        registerWithEureka: false
-        fetchRegistry: false
-        service-url:
+        registerWithEureka: true
+        fetchRegistry: true
+        serviceUrl:
             defaultZone: http://localhost:9761/eureka
 
 springdoc:
