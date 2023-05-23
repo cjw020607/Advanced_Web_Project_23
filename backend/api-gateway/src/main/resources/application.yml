@@ -20,7 +20,7 @@ spring:
                     filters:
                         - RewritePath=/crawling/(?<segment>.*), /$\{segment}
             default-filters:
-            - DedupeResponseHeader=Access-Control-Allow-Origin, Access-Control-Allow-Methods, Access-Control-Allow-Headers, Access-Control-Max-Age, Access-Control-Request-Headers, Access-Control-Request-Method
+            - DedupeResponseHeader=Access-Control-Allow-Origin Access-Control-Allow-Methods Access-Control-Allow-Headers Access-Control-Max-Age Access-Control-Request-Headers Access-Control-Request-Method
 
             globalcors:
                 corsConfigurations:
