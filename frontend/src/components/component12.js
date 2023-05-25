@@ -7,7 +7,7 @@ const Component12 = (propss) => {
         return <div style={{ minHeight: '0px', minWidth: '0px' }}>
             <a style={{ wordBreak: 'keep-all', margin: '0', padding: '0', border: '0', verticalAlign: 'baseline', boxSizing: 'border-box', display: 'block', color: '#191919', textDecoration: 'none', cursor: 'pointer' }} className="ke-thumb-list__link" href={props.gourl} >
                 <div style={{ height: 'auto', opacity: '1', display: 'block', width: 'auto', transition: 'opacity .3s', }} >
-                    <img style={{ aspectRatio: ' 476 / 250', width: '100%', borderRadius: '20px', overflow: 'hidden' }} data-unveil={props.imgurl} src={props.imgurl} alt="" />
+                    <img style={{ objectFit: 'contain', aspectRatio: ' 476 / 250', width: '100%', borderRadius: '20px', overflow: 'hidden' }} data-unveil={props.imgurl} src={props.imgurl} alt="" />
                 </div>
                 <div style={{ marginTop: '20px', display: 'block', cursor: 'pointer' }} >
                     <div style={{ marginBottom: '10px', display: 'block' }}>
@@ -29,7 +29,7 @@ const Component12 = (propss) => {
                     <div style={{ margin: '0', padding: '0', border: '0', verticalAlign: 'baseline', boxSizing: 'border-box', display: 'block' }} id="ke-case-list-wrap" className="ke-case-list-wrap">
 
 
-                        <div style={{ Width: '100%', padding: '30px', border: '0', verticalAlign: 'baseline', boxSizing: 'border-box', display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', columnGap: '30px', rowGap: '45px' }} className="ke-thumb-list">
+                        <div style={{ Width: '100%', padding: '30px', border: '0', verticalAlign: 'baseline', boxSizing: 'border-box', display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', columnGap: '60px', rowGap: '80px' }} className="ke-thumb-list">
                             {propss.data.map((item, index) => {
                                 return <Context gourl={item.gourl} imgurl={item.imgurl} tags={item.tag} text={item.title} />
                             })}
@@ -47,7 +47,7 @@ const Component12 = (propss) => {
 
                 </div >
             </div >
-
+            <div style={{ margin: '150px' }} />
 
 
         </>

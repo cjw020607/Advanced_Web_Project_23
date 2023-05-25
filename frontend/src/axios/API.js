@@ -15,4 +15,8 @@ const GetAInews = () => {
     return axios.get('http://localhost:9003/crawling/AInews')
 }
 
-export { GetPolicyNews, GetDrugNews, GetAnimalNews, GetAInews }
+const GetAllnews = () => {
+    return axios.get('http://localhost:9003/crawling/Allnews')
+}
+
+export { GetPolicyNews, GetDrugNews, GetAnimalNews, GetAInews, GetAllnews }

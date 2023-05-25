@@ -26,6 +26,21 @@ public class CrawlingController {
     final NewsCrawling newscrawling;
     final ImageCrawling imagecrawling;
 
+    @GetMapping("/Allnews")
+    @Operation(summary = "뉴스 크롤링", description = "최신 바이오 뉴스 크롤링 결과.")
+    public ResponseEntity<List<News>> newsAllcrawling(@RequestBody News news) {
+        try {
+            List<News> newslist = newscrawling.generateAllNews();
+
+            if (news == null) {
+                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            }
+            return new ResponseEntity<List<News>>(newslist, HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+    }
+
     @GetMapping("/policynews")
     @Operation(summary = "뉴스 크롤링", description = "최신 바이오 뉴스 크롤링 결과.")
     public ResponseEntity<List<News>> newsPolicycrawling(@RequestBody News news) {
@@ -75,7 +90,7 @@ public class CrawlingController {
     @Operation(summary = "뉴스 크롤링", description = "최신 바이오 뉴스 크롤링 결과.")
     public ResponseEntity<List<News>> newsAnimalcrawling(@RequestBody News news) {
         try {
-            List<News> newslist = newscrawling.generateDrugNews();
+            List<News> newslist = newscrawling.generateAnimalNews();
 
             if (news == null) {
                 return new ResponseEntity<>(HttpStatus.NOT_FOUND);
