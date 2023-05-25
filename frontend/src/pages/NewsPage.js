@@ -10,12 +10,14 @@ import { GetAllnews } from '../axios/API';
 const NewsPage = () => {
         const [tagData, setTagData] = useState([{ gourl: '', imgurl: '', tag: [], title: '' }])
         const [selectTag, setSelectTag] = useState('ALL')
+
+        const data1 = { "Keyword": "Bio News", "Sentence1Limit15Words": [" Provides the latest bio-related news. ", "Learn about policies, forums and events, constraints, and the latest issues."] }
         useEffect(() => {
                 GetAllnews().then((res) => { console.log(res.data); setTagData(res.data) })
         }, [])
         return <>
                 <Header />
-                <Component1 Keyword='Bio News' Sentence={['Provides the latest bio-related news.', 'Learn about policies, forums and events, constraints, and the latest issues.']} />
+                <Component1 data={data1} />
                 <br />
                 <Component11 tag={{ 'setTagData': setTagData, 'setSelectTag': setSelectTag, 'selectTag': selectTag }} categoryTitle={['ALL', 'POLICY', 'Medicine', 'Animal', 'AIBio']} />
                 {tagData.length !== 1 && <Component12 data={tagData} />}
