@@ -23,10 +23,10 @@ public class CrawlingController {
     final NewsCrawling newscrawling;
 
     @GetMapping("/news")
-    @Operation(summary = "뉴스 크롤링", description = "최신 바이오 뉴스 크롤링 결과.")
-    public ResponseEntity<List<News>> newscrawling(@RequestBody News news) {
+    @Operation(summary = "issue 크롤링", description = "최신 바이오 issue 크롤링 결과.")
+    public ResponseEntity<List<News>> issuecrawling(@RequestBody News news) {
         try {
-            List<News> newslist = newscrawling.generateNews();
+            List<News> newslist = newscrawling.generateAINews();
 
             if (news == null) {
                 return new ResponseEntity<>(HttpStatus.NOT_FOUND);
