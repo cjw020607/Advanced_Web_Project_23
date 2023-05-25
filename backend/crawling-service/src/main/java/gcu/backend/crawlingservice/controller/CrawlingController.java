@@ -5,8 +5,10 @@ import javax.annotation.Tainted;
 import org.springframework.http.HttpStatus;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
-//import io.swagger.v3.oas.annotations.parameters.RequestBody;
+
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.List;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,6 +26,7 @@ import gcu.backend.crawlingservice.service.ImageCrawling;
 @RestController
 @Tag(name = "Crawling", description = "크롤링 API")
 @AllArgsConstructor
+@Slf4j
 public class CrawlingController {
 
     final NewsCrawling newscrawling;
@@ -31,13 +34,10 @@ public class CrawlingController {
 
     @GetMapping("/Allnews")
     @Operation(summary = "뉴스 크롤링", description = "최신 바이오 뉴스 크롤링 결과.")
-    public ResponseEntity<List<News>> newsAllcrawling(@RequestBody News news) {
+    public ResponseEntity<List<News>> newsAllcrawling() {
         try {
             List<News> newslist = newscrawling.generateAllNews();
 
-            if (news == null) {
-                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-            }
             return new ResponseEntity<List<News>>(newslist, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
@@ -46,13 +46,10 @@ public class CrawlingController {
 
     @GetMapping("/policynews")
     @Operation(summary = "뉴스 크롤링", description = "최신 바이오 뉴스 크롤링 결과.")
-    public ResponseEntity<List<News>> newsPolicycrawling(@RequestBody News news) {
+    public ResponseEntity<List<News>> newsPolicycrawling() {
         try {
             List<News> newslist = newscrawling.generatePolicyNews();
 
-            if (news == null) {
-                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-            }
             return new ResponseEntity<List<News>>(newslist, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
@@ -61,13 +58,10 @@ public class CrawlingController {
 
     @GetMapping("/AInews")
     @Operation(summary = "뉴스 크롤링", description = "최신 바이오 뉴스 크롤링 결과.")
-    public ResponseEntity<List<News>> newsAIcrawling(@RequestBody News news) {
+    public ResponseEntity<List<News>> newsAIcrawling() {
         try {
             List<News> newslist = newscrawling.generateAINews();
 
-            if (news == null) {
-                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-            }
             return new ResponseEntity<List<News>>(newslist, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
@@ -76,13 +70,10 @@ public class CrawlingController {
 
     @GetMapping("/Drugnews")
     @Operation(summary = "뉴스 크롤링", description = "최신 바이오 뉴스 크롤링 결과.")
-    public ResponseEntity<List<News>> newsDrugcrawling(@RequestBody News news) {
+    public ResponseEntity<List<News>> newsDrugcrawling() {
         try {
             List<News> newslist = newscrawling.generateDrugNews();
 
-            if (news == null) {
-                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-            }
             return new ResponseEntity<List<News>>(newslist, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
@@ -91,13 +82,10 @@ public class CrawlingController {
 
     @GetMapping("/Animalnews")
     @Operation(summary = "뉴스 크롤링", description = "최신 바이오 뉴스 크롤링 결과.")
-    public ResponseEntity<List<News>> newsAnimalcrawling(@RequestBody News news) {
+    public ResponseEntity<List<News>> newsAnimalcrawling() {
         try {
             List<News> newslist = newscrawling.generateAnimalNews();
 
-            if (news == null) {
-                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-            }
             return new ResponseEntity<List<News>>(newslist, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
@@ -107,7 +95,7 @@ public class CrawlingController {
     @PostMapping("/image")
     @Operation(summary = "이미지 크롤링", description = "이미지 크롤링 결과")
     public ResponseEntity<List<Image>> imageCrawling(@RequestBody Keyword keyword) {
-
+        System.out.println(keyword.toString());
         try {
             List<Image> imageurl = imagecrawling.imageCrawling(keyword.getWords());
 
@@ -116,6 +104,7 @@ public class CrawlingController {
             }
             return new ResponseEntity<List<Image>>(imageurl, HttpStatus.OK);
         } catch (Exception e) {
+            log.info(e.toString());
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
     }

@@ -9,6 +9,6 @@ import gcu.backend.askingservice.model.Keyword;
 
 @FeignClient(name = "crawling-service")
 public interface IMGCrawling {
-    @PostMapping(value = "/image")
+    @PostMapping(value = "/image", consumes = "application/json", produces = "application/jsob")
     IMGResponse getImgResponse(@RequestBody Keyword Keyword);
 }

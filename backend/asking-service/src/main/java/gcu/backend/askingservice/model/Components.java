@@ -5,14 +5,14 @@ public class Components {
         public static String com1 = "{\n" +
                         "    \"JsonName\": \"com1\",\n" +
                         "    \"Keyword\": \" ???\",\n" +
-                        "    \"Sentence1Limit15Words\": [\" ??? \" , \" ??? \"],\n"+
+                        "    \"Sentence1Limit15Words\": [\" ??? \" , \" ??? \"],\n" +
                         "}";
         public static String com2 = "{\n" +
                         "    \"JsonName\": \"com2\",\n" +
                         "    \"AnswerKeyword\": \" ???\",\n" +
                         "    \"HomepageURL\": \" ??? \",\n" +
                         "    \"Content4Words\": \" ??? \",\n" +
-                        "    \"SummaryWords\": [\" ???? \" ],\n"+
+                        "    \"SummaryWords\": [\" ???? \" ],\n" +
                         "}";
         public static String com3 = "{\n" +
                         "    \"JsonName\": \"com3\",\n" +
@@ -23,7 +23,7 @@ public class Components {
                         "    \"ListOneWord3\": \" ??? \",\n" +
                         "    \"ListOneWord4\": \" ??? \",\n" +
                         "    \"Content2Lines\": \" ??? \",\n" +
-                        "    \"SummaryWords\": [\" ???? \" ],\n"+
+                        "    \"SummaryWords\": [\" ???? \" ],\n" +
                         "}";
 
         public static String com4 = "{\n" +
@@ -43,19 +43,19 @@ public class Components {
                         "    \"Sentence3Short\": \" ???\",\n" +
                         "    \"Keyword2\": \" ??? \",\n" +
                         "    \"Sentence4\": \" ??? \",\n" +
-                        "    \"SummaryWords\": [\" ???? \" ],\n"+
+                        "    \"SummaryWords\": [\" ???? \" ],\n" +
                         "}";
 
         public static String com6 = "{\n" +
                         "    \"JsonName\": \"com6\",\n" +
                         "    \"Keyword1\": \" ???\",\n" +
                         "    \"Title4words\": \" ??? \",\n" +
-                        "    \"SummaryShort\": [\" ???? \",\" ???? \",\" ???? \",\" ???? \", \" ???? \" ],\n"+
+                        "    \"SummaryShort\": [\" ???? \",\" ???? \",\" ???? \",\" ???? \", \" ???? \" ],\n" +
                         "    \"Keyword2\": \" ??? \",\n" +
                         "    \"Title3Words\": \" ??? \",\n" +
-                        "    \"SummaryShort2\": [\" ???? \",\" ???? \",\" ???? \"],\n"+
+                        "    \"SummaryShort2\": [\" ???? \",\" ???? \",\" ???? \"],\n" +
                         "    \"WebpageURL\": \" ??? \"\n" +
-                        "    \"SummaryWords\": [\" ???? \",\" ???? \"],\n"+
+                        "    \"SummaryWords\": [\" ???? \",\" ???? \"],\n" +
                         "}";
         public static String com7 = "{\n" +
                         "    \"JsonName\": \"com7\",\n" +
@@ -69,13 +69,13 @@ public class Components {
                         "    \"RelatedHomepage3\": \" ??? \",\n" +
                         "    \"RelatedTopic4\": \" ??? \",\n" +
                         "    \"RelatedHomepage4\": \" ??? \",\n" +
-                        "    \"SummaryWords\": [\" ???? \",\" ???? \",\" ???? \",\" ???? \"],\n"+
+                        "    \"SummaryWords\": [\" ???? \",\" ???? \",\" ???? \",\" ???? \"],\n" +
                         "}";
         public static String com10 = "{\n" +
                         "    \"JsonName\": \"com10\",\n" +
                         "    \"Keyword1\": \" ???\",\n" +
-                        "    \"ExplainIn1sentence\": [\" ???? \",\" ???? \",\" ???? \"],\n"+
-                        "    \"SummaryWords\": [\" ???? \"],\n"+
+                        "    \"ExplainIn1sentence\": [\" ???? \",\" ???? \",\" ???? \"],\n" +
+                        "    \"SummaryWords\": [\" ???? \"],\n" +
                         "}";
 
 }
