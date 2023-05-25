@@ -3,6 +3,7 @@ package gcu.backend.crawlingservice.service;
 import org.springframework.stereotype.Service;
 
 import gcu.backend.crawlingservice.model.News;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import java.util.*;
@@ -11,10 +12,10 @@ import java.io.IOException;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;;
+import org.jsoup.select.Elements;
 
 @Service
-
+@AllArgsConstructor
 public class NewsCrawling {
 
     public List<News> generateAINews() throws IOException {
