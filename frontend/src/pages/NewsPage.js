@@ -63,9 +63,11 @@ const postData = [{ gourl: 'https://www.biotimes.co.kr/news/articleView.html?idx
 const NewsPage = () => {
         const [tagData, setTagData] = useState(postData)
         const [selectTag, setSelectTag] = useState('ALL')
+
+        const data1 = { "Keyword": "Bio News", "Sentence1Limit15Words": [" Provides the latest bio-related news. ", "Learn about policies, forums and events, constraints, and the latest issues."] }
         return <>
                 <Header />
-                <Component1 Keyword='Bio News' Sentence={['Provides the latest bio-related news.', 'Learn about policies, forums and events, constraints, and the latest issues.']} />
+                <Component1 data={data1} />
                 <br />
                 <Component11 tag={{ 'postData': postData, 'setTagData': setTagData, 'setSelectTag': setSelectTag, 'selectTag': selectTag }} categoryTitle={['ALL', 'POLICY', 'Forum', 'ISSUES', 'MEDICAL']} />
                 <Component12 data={tagData} />

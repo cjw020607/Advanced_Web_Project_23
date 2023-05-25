@@ -14,11 +14,11 @@ const Component2 = (props) => {
             </picture>
         </figure>
         <div style={{ maxWidth: '1100px', width: '100%', position: 'absolute', padding: '0', top: 'calc(50% - 110px)', left: 'calc(50% - 600px)', color: '#ffffff' }} >
-            <div style={{ fontSize: '30px', fontWeight: '700', marginBottom: '10px' }} >{props.Keyword}</div>
-            <div style={{ fontSize: '40px', fontWeight: '700' }} >{props.Content.map((content) => <>{content}<br /></>)}</div>
+            <div style={{ fontSize: '30px', fontWeight: '700', marginBottom: '10px' }} >{props.data.AnswerKeyword}</div>
+            <div style={{ fontSize: '40px', fontWeight: '700' }} >{props.data.Content4Words.map((content) => <>{content}<br /></>)}</div>
 
             <div >
-                <a style={{ padding: '0 20px', marginTop: '20px', height: '40px', display: 'inline-flex', lineHeight: '40px', fontWeight: '800', textDecoration: 'none', borderRadius: '20px', fontSize: '14px', backgroundColor: '#ffffff', color: '#000000' }} href={props.Homepage} data-an-tr="body contents" data-an-ca="link click" data-an-ac="Learn more" data-an-la="career banner">Learn more</a>
+                <a style={{ padding: '0 20px', marginTop: '20px', height: '40px', display: 'inline-flex', lineHeight: '40px', fontWeight: '800', textDecoration: 'none', borderRadius: '20px', fontSize: '14px', backgroundColor: '#ffffff', color: '#000000' }} href={props.data.HomepageURL} data-an-tr="body contents" data-an-ca="link click" data-an-ac="Learn more" data-an-la="career banner">Learn more</a>
             </div>
         </div>
     </div>
