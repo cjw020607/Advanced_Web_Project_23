@@ -1,18 +1,9 @@
 import React from "react";
-import { GetPolicyNews, GetDrugNews, GetAnimalNews, GetAInews } from "../axios/API";
+import { GetPolicyNews, GetDrugNews, GetAnimalNews, GetAInews, GetAllnews } from "../axios/API";
 // #888
 
 const Component11 = (props) => {
-    const selectTag = (postData, content) => {
-        content = content.toLowerCase()
-        if (content === "all") {
-            return postData
-        }
-        return postData.filter((item, index) => {
-            const temp = item.tag.map((e) => e.toLowerCase())
-            return temp.includes(content)
-        })
-    }
+
 
     const Category = ({ content, tag }) => {
         return <li class="">
@@ -26,10 +17,10 @@ const Component11 = (props) => {
                     GetDrugNews().then((res) => { tag.setTagData(res.data) })
                 } else if (content === 'animal') {
                     GetAnimalNews().then((res) => { tag.setTagData(res.data) })
-                } else if (content === 'ai') {
+                } else if (content === 'aibio') {
                     GetAInews().then((res) => { tag.setTagData(res.data) })
-                } else {
-                    GetPolicyNews().then((res) => { tag.setTagData(res.data) })
+                } else if (content === 'all') {
+                    GetAllnews().then((res) => { tag.setTagData(res.data) })
                 }
 
             }} style={{ fontSize: "17px", padding: "18px 16px", display: "blocK", fontWeight: "500", color: tag.selectTag === content ? "#023586" : '#888', position: "relative", transition: "color .3s ease-out", boxShadow: "none", textDecoration: "none", boxSizing: "border-box", textTransform: 'uppercase' }}>{content}</a>

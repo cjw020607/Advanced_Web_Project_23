@@ -6,13 +6,17 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import lombok.Data;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import gcu.backend.askingservice.service.ChatGPT;
+import gcu.backend.askingservice.feign.IMGCrawling;
 import gcu.backend.askingservice.model.Components;
+import gcu.backend.askingservice.model.IMGResponse;
+import gcu.backend.askingservice.model.Keyword;
+
 import java.util.*;
 
 @Service
@@ -21,10 +25,12 @@ public class Prompt {
     final ChatGPT chatgpt;
     Random random = new Random();
 
+    @Autowired
+    private IMGCrawling imgCrawling;
+
     public List<Map<String, Object>> promptService(String request)
             throws ParseException, JsonMappingException, JsonProcessingException {
 
-        JSONParser parser = new JSONParser();
         String[] components = { Components.com1, Components.com2, Components.com3, Components.com4, Components.com5,
                 Components.com6, Components.com7, Components.com8 };
         List<Integer> numbers = new ArrayList<>();
@@ -58,6 +64,14 @@ public class Prompt {
         List<Map<String, Object>> list = objectMapper.readValue(answer,
                 new TypeReference<List<Map<String, Object>>>() {
                 });
+
+        for (Map<String, Object> map : list) {
+            if (map.containsKey("SummaryWords")) {
+                Keyword words = Keyword.builder().words((List<String>) map.get("SummaryWords")).build();
+                IMGResponse response = imgCrawling.getImgResponse(words);
+                map.put("imgurl", response.getImgurl());
+            }
+        }
 
         return list;
     }
