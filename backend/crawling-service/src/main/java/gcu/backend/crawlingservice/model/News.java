@@ -1,4 +1,4 @@
-package gcu.backend.model;
+package gcu.backend.crawlingservice.model;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

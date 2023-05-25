@@ -1,10 +1,9 @@
-package gcu.backend.crawlingservice;
+package gcu.backend.crawlingservice.service;
 
 import org.springframework.stereotype.Service;
 
-import gcu.backend.model.News;
+import gcu.backend.crawlingservice.model.News;
 import lombok.Data;
-import gcu.backend.model.News;
 
 import java.util.*;
 import java.io.IOException;

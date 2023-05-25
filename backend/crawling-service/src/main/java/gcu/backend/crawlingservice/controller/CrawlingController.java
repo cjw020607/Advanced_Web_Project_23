@@ -1,4 +1,4 @@
-package gcu.backend.controller;
+package gcu.backend.crawlingservice.controller;
 
 import javax.annotation.Tainted;
 import org.springframework.http.HttpStatus;
@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 // import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import gcu.backend.model.News;
-import gcu.backend.crawlingservice.NewsCrawling;
+import gcu.backend.crawlingservice.model.News;
+import gcu.backend.crawlingservice.service.NewsCrawling;
 
 @RestController
 @Tag(name = "Crawling", description = "뉴스 크롤링 API")
@@ -22,7 +22,7 @@ public class CrawlingController {
 
     final NewsCrawling newscrawling;
 
-    @GetMapping("/crawling/news")
+    @GetMapping("/news")
     @Operation(summary = "뉴스 크롤링", description = "최신 바이오 뉴스 크롤링 결과.")
     public ResponseEntity<List<News>> newscrawling(@RequestBody News news) {
         try {
