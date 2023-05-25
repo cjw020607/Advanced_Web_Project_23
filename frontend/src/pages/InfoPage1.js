@@ -32,9 +32,9 @@ const Com8data6 = [{ imgurl: pepto, tag: ['Stomachache', 'Anti-diarrhea', 'Cherr
 const InfoPage1 = () => {
         return <>
                 <Header />
-                <Component1 title1='MEDICINE' contents={['SoonYeol BIO is a bio company that strives to provide customers with the right and appropriate medicines,', 'making new developments to provide effective medicines.']} />
+                <Component1 Keyword='MEDICINE' Sentence={['SoonYeol BIO is a bio company that strives to provide customers with the right and appropriate medicines,', 'making new developments to provide effective medicines.']} />
                 <br /><br /><br />
-                <Component4 color="#0082FF" head='Medicine company' title='Personal medicine' content1='Medicines are chemicals or compounds used to cure, halt, prevent disease or help in the diagnosis of illnesses.Our company offers reliable and proven medicines at reasonable prices, and exceptional technology across all areas helps our customers treat them.' content2='Learn more' link="https://kidshealth.org/en/teens/meds.html" image1={medicine} />
+                <Component4 color="#0082FF" Keyword='Medicine company' Title1='Personal medicine' Content1='Medicines are chemicals or compounds used to cure, halt, prevent disease or help in the diagnosis of illnesses.Our company offers reliable and proven medicines at reasonable prices, and exceptional technology across all areas helps our customers treat them.' Title2='Learn more' Webpage="https://kidshealth.org/en/teens/meds.html" image1={medicine} />
                 <br /><br /><br /><br /><br />
                 <Component7 title='Medicine categories' content='Since not all drugs are easily accessible to us, it is important to know the rules of each category of the drug.'
                         bar1='General' bar2='Pharmacy' bar3='Prescription' bar4='Controlled'
@@ -50,7 +50,7 @@ const InfoPage1 = () => {
                 <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
                 <Component8 bgColor="#9CF" title1='Major Medicines' title2='Experience a definite effect with the major medicine suggested by SoonYeol BIO' data={[Com8data1, Com8data2, Com8data3, Com8data4, Com8data5, Com8data6]} />
                 <br /><br /><br />
-                <Component2 head='Medicine' contents={['Small but big power', 'healing your body']} url="https://www.drugs.com/alpha/a.html" imgurl={family} />
+                <Component2 Keyword='Medicine' Content={['Small but big power', 'healing your body']} Homepage="https://www.drugs.com/alpha/a.html" imgurl={family} />
                 <Footer />
         </>
 }

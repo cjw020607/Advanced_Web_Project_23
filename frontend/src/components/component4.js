@@ -7,17 +7,17 @@ const Component4 = (props) => {
                 <div class="component-intro__inner" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", columnGap: "10", minHeight: "470px", tableLayout: "fixed", width: "100%", position: "relative" }}>
                     <div class="component-intro__info" style={{ margin: "0 5px 0 0", display: "flex", borderRadius: "20px", width: "auto", fontSize: "16px", verticalAlign: "middle", position: "relative", background: props.color, paddingLeft: "108", paddingRight: "108px", paddingTop: "0", paddingBottom: "0", padding: "0px 100px 0px 100px", overflow: "hidden" }}>
                         <div class="component-intro__info-inner" style={{ alignSelf: "center", display: "block" }}>
-                            <span class="component-intro__label" style={{ color: "#FFFFFF", display: "block", fontSize: "15px", lineHeight: "1.87", fontWeight: "600", letterSpacing: "-1px" }}>{props.head}</span>
-                            <h2 class="component-intro__title" style={{ color: "#FFFFFF", fontSize: "30px", fontWeight: "600", letterSpacing: "-1px", marginTop: "10px", marginBottom: "0" }}>{props.title}</h2>
+                            <span class="component-intro__label" style={{ color: "#FFFFFF", display: "block", fontSize: "15px", lineHeight: "1.87", fontWeight: "600", letterSpacing: "-1px" }}>{props.Keyword}</span>
+                            <h2 class="component-intro__title" style={{ color: "#FFFFFF", fontSize: "30px", fontWeight: "600", letterSpacing: "-1px", marginTop: "10px", marginBottom: "0" }}>{props.Title1}</h2>
                             <p class="component-into__desc" style={{ color: "rgba(255,255,255,.7)", marginTop: "17", fontSize: "15px", lineHeight: "1.87", fontWeight: "400", letterSpacing: "-1px", display: "block" }}>
-                                {props.content1}
+                                {props.Content1}
                             </p>
 
 
                             <div class="component-intro__action" style={{ marginTop: "35px", marginBottom: "-10px", fontSize: "0", display: "block" }}>
-                                <a class="ke-btn__icon ke-btn--type-02 ke-btn--icon-outlink" href={props.link} target="_blank" rel="noopener" style={{ marginRight: "0", color: "#FFFFFF", borderColor: "#FFFFFF", display: "inline-block", vrticalAlign: "middle", padding: "15px 33px 14px", position: "relative", textAlign: "center", fontSize: "13px", fontWeight: "600", lineHeight: 1, letterSpacing: "-1px", background: "transparent", border: "2px solid #FFFFFF", borderRadius: "24px", textDecoration: "none" }}>
+                                <a class="ke-btn__icon ke-btn--type-02 ke-btn--icon-outlink" href={props.Webpage} target="_blank" rel="noopener" style={{ marginRight: "0", color: "#FFFFFF", borderColor: "#FFFFFF", display: "inline-block", vrticalAlign: "middle", padding: "15px 33px 14px", position: "relative", textAlign: "center", fontSize: "13px", fontWeight: "600", lineHeight: 1, letterSpacing: "-1px", background: "transparent", border: "2px solid #FFFFFF", borderRadius: "24px", textDecoration: "none" }}>
                                     <span style={{ paddingRight: "21px", position: "relative" }}>
-                                        {props.content2}
+                                        {props.Title2}
                                         <i class="ke-guide--icon" style={{ display: "block", width: "13px", marginTop: "-7px", color: "#FFFFFF", position: "absolute", right: 0, top: "50%" }}>
                                             <svg width="10" height="10" viewBox="0 0 12 12" style={{ display: "blocK", width: "100%", height: "auto", overFlowClipMargin: "content-box", overflow: "hidden", color: "#fff" }} >
                                                 <path fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" d="M4.1,2.5h5.4v5.3"></path>
