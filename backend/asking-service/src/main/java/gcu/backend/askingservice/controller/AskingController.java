@@ -7,6 +7,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+import java.util.Map;
+
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -38,15 +41,16 @@ public class AskingController {
         return ResponseEntity.ok(chatGPT.generateText(request.getQuestion()));
     }
 
-    @GetMapping("/prompt")
+    @PostMapping("/prompt")
     @Operation(summary = "prompt service", description = "prompt service입니다.")
-    public ResponseEntity<JSONObject> promptService(@RequestBody String request) {
+    public ResponseEntity<List<Map<String, Object>>> promptService(@RequestBody Request request) {
         if (request == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         try {
-            return ResponseEntity.ok(prompt.promptService(request));
+            return ResponseEntity.ok(prompt.promptService(request.getQuestion()));
         } catch (Exception e) {
+            log.info(e.toString());
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
     }

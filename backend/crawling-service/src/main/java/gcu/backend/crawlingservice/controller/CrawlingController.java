@@ -9,18 +9,22 @@ import lombok.AllArgsConstructor;
 import java.util.List;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 // import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import gcu.backend.crawlingservice.model.News;
+import gcu.backend.crawlingservice.model.Image;
 import gcu.backend.crawlingservice.service.NewsCrawling;
+import gcu.backend.crawlingservice.service.ImageCrawling;
 
 @RestController
-@Tag(name = "Crawling", description = "뉴스 크롤링 API")
+@Tag(name = "Crawling", description = "크롤링 API")
 @AllArgsConstructor
 public class CrawlingController {
 
     final NewsCrawling newscrawling;
+    final ImageCrawling imagecrawling;
 
     @GetMapping("/policynews")
     @Operation(summary = "뉴스 크롤링", description = "최신 바이오 뉴스 크롤링 결과.")
@@ -71,7 +75,7 @@ public class CrawlingController {
     @Operation(summary = "뉴스 크롤링", description = "최신 바이오 뉴스 크롤링 결과.")
     public ResponseEntity<List<News>> newsAnimalcrawling(@RequestBody News news) {
         try {
-            List<News> newslist = newscrawling.generateAnimalNews();
+            List<News> newslist = newscrawling.generateDrugNews();
 
             if (news == null) {
                 return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -81,4 +85,21 @@ public class CrawlingController {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
     }
+
+    @GetMapping("/image/{keyword}")
+    @Operation(summary = "이미지 크롤링", description = "이미지 크롤링 결과")
+    public ResponseEntity<List<Image>> imageCrawling(@PathVariable String[] keyword) {
+
+        try {
+            List<Image> imageurl = imagecrawling.imageCrawling(keyword);
+
+            if (imageurl == null) {
+                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            }
+            return new ResponseEntity<List<Image>>(imageurl, HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+    }
+
 }
