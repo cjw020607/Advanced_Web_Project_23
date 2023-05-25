@@ -41,6 +41,9 @@ public class NewsCrawling {
             news.setImgurl(imgUrl);
             news.setTitle(title);
             news.setGourl("https://www.pharmnews.com/" + articleUrl);
+            List<String> tag = new ArrayList<>();
+            tag.add("AIBio");
+            news.setTag(tag);
             newsList.add(news);
         }
         return newsList;
@@ -70,6 +73,9 @@ public class NewsCrawling {
             news.setImgurl(imgUrl);
             news.setTitle(title);
             news.setGourl("https://www.pharmnews.com/" + articleUrl);
+            List<String> tag = new ArrayList<>();
+            tag.add("Policy");
+            news.setTag(tag);
             newsList.add(news);
         }
 
@@ -100,6 +106,9 @@ public class NewsCrawling {
             news.setImgurl(imgUrl);
             news.setTitle(title);
             news.setGourl("https://www.pharmnews.com/" + articleUrl);
+            List<String> tag = new ArrayList<>();
+            tag.add("Medicine");
+            news.setTag(tag);
             newsList.add(news);
         }
         return newsList;
@@ -129,6 +138,9 @@ public class NewsCrawling {
             news.setImgurl(imgUrl);
             news.setTitle(title);
             news.setGourl("https://www.pharmnews.com/" + articleUrl);
+            List<String> tag = new ArrayList<>();
+            tag.add("Animal");
+            news.setTag(tag);
             newsList.add(news);
         }
         return newsList;

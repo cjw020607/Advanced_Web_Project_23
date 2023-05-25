@@ -24,7 +24,7 @@ const Component3 = (props) => {
                                 ...a,
                                 marginBottom: "16px",
                             }}>
-                                <h1 class="title-h1">{props.head}</h1>
+                                <h1 class="title-h1">{props.Keyword1}</h1>
                             </div>
                         </section>
                     </div>
@@ -45,26 +45,26 @@ const Component3 = (props) => {
                                         ...b, fontSize: "56px",
                                         fontWeight: "900",
                                         color: "#000"
-                                    }}>{props.subtitle}</dt>
+                                    }}>{props.Keyword2}</dt>
                                     <dd style={{
                                         ...a, ...b, fontSize: "32px",
                                         fontWeight: "700",
                                         color: "#000", marginTop: "32px"
                                     }}>
-                                        {props.content1}
+                                        {props.List1}
                                         <br />
-                                        {props.content2}
+                                        {props.List2}
                                         <br />
-                                        {props.content3}
+                                        {props.List3}
                                         <br />
-                                        {props.content4}
+                                        {props.List4}
                                     </dd>
                                 </dl>
                                 <p style={{
                                     ...a, ...b, color: "#333",
                                     marginTop: "64px", paddingRight: "32px"
                                 }}>
-                                    {props.content5}
+                                    {props.Content}
                                 </p>
                             </div>
                             <div style={{

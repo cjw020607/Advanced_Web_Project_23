@@ -1,4 +1,5 @@
 import React from "react";
+import { GetPolicyNews, GetDrugNews, GetAnimalNews, GetAInews } from "../axios/API";
 // #888
 
 const Component11 = (props) => {
@@ -15,7 +16,23 @@ const Component11 = (props) => {
 
     const Category = ({ content, tag }) => {
         return <li class="">
-            <a href="/" onClick={(e) => { e.preventDefault(); tag.setSelectTag(content); tag.setTagData(selectTag(tag.postData, content)) }} style={{ fontSize: "17px", padding: "18px 16px", display: "blocK", fontWeight: "500", color: tag.selectTag === content ? "#023586" : '#888', position: "relative", transition: "color .3s ease-out", boxShadow: "none", textDecoration: "none", boxSizing: "border-box", textTransform: 'uppercase' }}>{content}</a>
+            <a href="/" onClick={(e) => {
+                e.preventDefault(); tag.setSelectTag(content);
+                //tag.setTagData(selectTag(tag.postData, content)) 
+                content = content.toLowerCase()
+                if (content === 'policy') {
+                    GetPolicyNews().then((res) => { tag.setTagData(res.data) })
+                } else if (content === 'medicine') {
+                    GetDrugNews().then((res) => { tag.setTagData(res.data) })
+                } else if (content === 'animal') {
+                    GetAnimalNews().then((res) => { tag.setTagData(res.data) })
+                } else if (content === 'ai') {
+                    GetAInews().then((res) => { tag.setTagData(res.data) })
+                } else {
+                    GetPolicyNews().then((res) => { tag.setTagData(res.data) })
+                }
+
+            }} style={{ fontSize: "17px", padding: "18px 16px", display: "blocK", fontWeight: "500", color: tag.selectTag === content ? "#023586" : '#888', position: "relative", transition: "color .3s ease-out", boxShadow: "none", textDecoration: "none", boxSizing: "border-box", textTransform: 'uppercase' }}>{content}</a>
         </li>
     };
     return (
