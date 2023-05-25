@@ -24,7 +24,7 @@ const Component3 = (props) => {
                                 ...a,
                                 marginBottom: "16px",
                             }}>
-                                <h1 class="title-h1">{props.Keyword1}</h1>
+                                <h1 class="title-h1">{props.data.Keyword1}</h1>
                             </div>
                         </section>
                     </div>
@@ -45,26 +45,26 @@ const Component3 = (props) => {
                                         ...b, fontSize: "56px",
                                         fontWeight: "900",
                                         color: "#000"
-                                    }}>{props.Keyword2}</dt>
+                                    }}>{props.data.Keyword2}</dt>
                                     <dd style={{
                                         ...a, ...b, fontSize: "32px",
                                         fontWeight: "700",
                                         color: "#000", marginTop: "32px"
                                     }}>
-                                        {props.List1}
+                                        {props.data.ListOneWord1}
                                         <br />
-                                        {props.List2}
+                                        {props.data.ListOneWord2}
                                         <br />
-                                        {props.List3}
+                                        {props.data.ListOneWord3}
                                         <br />
-                                        {props.List4}
+                                        {props.data.ListOneWord4}
                                     </dd>
                                 </dl>
                                 <p style={{
                                     ...a, ...b, color: "#333",
                                     marginTop: "64px", paddingRight: "32px"
                                 }}>
-                                    {props.Content}
+                                    {props.data.Content2Lines}
                                 </p>
                             </div>
                             <div style={{

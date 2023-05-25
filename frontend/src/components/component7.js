@@ -20,6 +20,7 @@ const Component7 = (props) => {
                                                             </h2>
                                                             <div style={{ marginBottm: "0", boxSizing: "border-box", display: "block", wordWrap: "break-word", textAlign: "left", fontSize: "1rem", fontWeight: "400", lineHeight: "1.5", color: "#000", font: "SegoeUI" }}>
                                                                 {props.data.ExplainIn1sentence}
+
                                                             </div>
                                                         </div>
                                                     </div>
@@ -39,7 +40,9 @@ const Component7 = (props) => {
 
                                                                 <a data-bi-cn="Home" data-bi-ecn="가정" data-bi-ct="cta" data-bi-pa="body" data-bi-bhvr="230" data-bi-tags="{&quot;BiLinkName&quot;:&quot;Home&quot;}" class="cta    " style={{ marginRight: 0, paddingRight: "1.68em", color: "#FFFFFF", display: "inlineBlock", position: "relative", textDecoration: "none", fontWeight: "600", boxSizing: "border-box", cursor: "pointer" }} data-target={props.data.RelatedHomepage1} aria-label="Teams의 가정 옵션입니다." target="_self" href={props.data.RelatedHomepage1}>
                                                                     <span style={{ boxSizing: "border-box", color: "#FFFFFF", fontWeight: "600", cursor: "pointer", fontSize: "17px" }}>
+
                                                                         {props.data.RelatedTopic1}
+
                                                                     </span>
                                                                 </a>
                                                             </div>
@@ -64,6 +67,7 @@ const Component7 = (props) => {
                                                                 <a data-bi-cn="Business" data-bi-ecn="비즈니스" data-bi-ct="cta" data-bi-pa="body" data-bi-bhvr="230" data-bi-tags="{&quot;BiLinkName&quot;:&quot;Business&quot;}" class="cta    " style={{ textDecoration: "none" }} data-target={props.data.RelatedHomepage2} aria-label="Teams의 비즈니스 옵션입니다." target="_self" href={props.data.RelatedHomepage2}>
                                                                     <span style={{ boxSizing: "border-box", color: "#FFFFFF", fontWeight: "600", cursor: "pointer", fontSize: "17px" }}>
                                                                         {props.data.RelatedTopic2}
+
                                                                     </span>
                                                                 </a>
                                                             </div>
@@ -87,7 +91,9 @@ const Component7 = (props) => {
 
                                                                 <a data-bi-cn="Enterprise" data-bi-ecn="엔터프라이즈" data-bi-ct="cta" data-bi-pa="body" data-bi-bhvr="230" data-bi-tags="{&quot;BiLinkName&quot;:&quot;Enterprise&quot;}" class="cta    " style={{ textDecoration: "none" }} data-target={props.RelatedHomepage3} aria-label="Teams의 엔터프라이즈 옵션입니다." target="_self" href={props.RelatedHomepage3}>
                                                                     <span style={{ boxSizing: "border-box", color: "#FFFFFF", fontWeight: "600", cursor: "pointer", fontSize: "17px" }}>
+
                                                                         {props.data.RelatedTopic3}
+
                                                                     </span>
                                                                 </a>
                                                             </div>
@@ -111,7 +117,9 @@ const Component7 = (props) => {
 
                                                                 <a data-bi-cn="Education" data-bi-ecn="교육" data-bi-ct="cta" data-bi-pa="body" data-bi-bhvr="230" data-bi-tags="{&quot;BiLinkName&quot;:&quot;Education&quot;}" class="cta    " style={{ textDecoration: "none" }} data-target={props.data.RelatedHomepage4} aria-label="Teams의 교육 옵션입니다." target="_self" href={props.data.RelatedHomepage4}>
                                                                     <span style={{ boxSizing: "border-box", color: "#FFFFFF", fontWeight: "600", cursor: "pointer", fontSize: "17px" }}>
+
                                                                         {props.data.RelatedTopic4}
+
                                                                     </span>
                                                                 </a>
                                                             </div>
