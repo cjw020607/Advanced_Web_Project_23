@@ -26,7 +26,7 @@ public class Prompt {
 
         JSONParser parser = new JSONParser();
         String[] components = { Components.com1, Components.com2, Components.com3, Components.com4, Components.com5,
-                Components.com6, Components.com7, Components.com8 };
+                Components.com6, Components.com7, Components.com10 };
         List<Integer> numbers = new ArrayList<>();
         double randomValue = Math.random();
         int val = (int) (randomValue * 3) + 2;
