@@ -9,7 +9,8 @@ const MainPage = () => {
     return <><Header /><Visual />
         {/* <Component13 head='Medicines' content1={'SoonYeol BIO\'s information is available at reasonable cost to patients'} content2='Provides an opportunity to receive high-quality biopharmaceutical treatment' button='Learn more' url="/info1" img={visual} /> */}
         {/* <Visual2 /> */}
-        <Footer /></>
+        {/* <Footer /> */}
+    </>
 }
 
 export default MainPage;
