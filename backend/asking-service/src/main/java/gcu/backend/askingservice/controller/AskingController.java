@@ -7,6 +7,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+import java.util.Map;
+
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -40,7 +43,7 @@ public class AskingController {
 
     @PostMapping("/prompt")
     @Operation(summary = "prompt service", description = "prompt service입니다.")
-    public ResponseEntity<JSONObject> promptService(@RequestBody Request request) {
+    public ResponseEntity<List<Map<String, Object>>> promptService(@RequestBody Request request) {
         if (request == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }

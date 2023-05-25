@@ -1,7 +1,12 @@
 package gcu.backend.askingservice.service;
 
 import org.springframework.stereotype.Service;
-import java.util.Random;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import lombok.Data;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -12,12 +17,12 @@ import java.util.*;
 
 @Service
 @Data
-
 public class Prompt {
     final ChatGPT chatgpt;
     Random random = new Random();
 
-    public JSONObject promptService(String request) throws ParseException {
+    public List<Map<String, Object>> promptService(String request)
+            throws ParseException, JsonMappingException, JsonProcessingException {
 
         JSONParser parser = new JSONParser();
         String[] components = { Components.com1, Components.com2, Components.com3, Components.com4, Components.com5,
@@ -48,9 +53,13 @@ public class Prompt {
         String gptPrompt = enter + joinComs + warning;
         String answer = chatgpt.generateText(gptPrompt);
         System.out.println(answer);
-        JSONObject jsonObject = (JSONObject) parser.parse(answer);
+        ObjectMapper objectMapper = new ObjectMapper();
 
-        return jsonObject;
+        List<Map<String, Object>> list = objectMapper.readValue(answer,
+                new TypeReference<List<Map<String, Object>>>() {
+                });
+
+        return list;
     }
 
 }
