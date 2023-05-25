@@ -3,7 +3,7 @@ import Component11 from '../components/component11';
 import Component12 from '../components/component12';
 import Footer from '../components/footer';
 import Component1 from '../components/component1';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import img1 from '../img/newsimg/img1.jpeg';
 import img2 from '../img/newsimg/img2.jpeg';
 import img3 from '../img/newsimg/img3.jpeg';
@@ -31,6 +31,7 @@ import img24 from '../img/newsimg/img24.jpeg';
 import img25 from '../img/newsimg/img25.jpeg';
 import img26 from '../img/newsimg/img26.png';
 import img27 from '../img/newsimg/img27.jpeg';
+import { GetPolicyNews } from '../axios/API';
 
 const postData = [{ gourl: 'https://www.biotimes.co.kr/news/articleView.html?idxno=6415', imgurl: img1, tag: ['Policy'], title: '2025년까지 백신 5대 강국으로 만들기 위해 2.2조 투입된다' },
 { gourl: 'https://www.biotimes.co.kr/news/articleView.html?idxno=5103', imgurl: img2, tag: ['Policy', 'Medical'], title: 'AI 기반 신약개발 특허 신청·획득 쉬워진다' },
@@ -61,16 +62,20 @@ const postData = [{ gourl: 'https://www.biotimes.co.kr/news/articleView.html?idx
 { gourl: 'https://www.startuptoday.kr/news/articleView.html?idxno=46654', imgurl: img27, tag: ['Forum', 'Medical'], title: '케이엠디바이오, ADC보다 효과 좋은 PCSN으로 글로벌 항암제 시장 도전 [제272회 BTCN벤처포럼]' },
 ]
 const NewsPage = () => {
-        const [tagData, setTagData] = useState(postData)
+        const [tagData, setTagData] = useState([{ gourl: '', imgurl: '', tag: [], title: '' }])
         const [selectTag, setSelectTag] = useState('ALL')
+        useEffect(() => {
+                GetPolicyNews().then((res) => { console.log(res.data); setTagData(res.data) })
+        }, [])
         return <>
                 <Header />
                 <Component1 title1='Bio News' contents={['Provides the latest bio-related news.', 'Learn about policies, forums and events, constraints, and the latest issues.']} />
                 <br />
-                <Component11 tag={{ 'postData': postData, 'setTagData': setTagData, 'setSelectTag': setSelectTag, 'selectTag': selectTag }} categoryTitle={['ALL', 'POLICY', 'Forum', 'ISSUES', 'MEDICAL']} />
-                <Component12 data={tagData} />
+                <Component11 tag={{ 'postData': postData, 'setTagData': setTagData, 'setSelectTag': setSelectTag, 'selectTag': selectTag }} categoryTitle={['ALL', 'POLICY', 'medicine', 'animal', 'ai']} />
+                {tagData.length !== 1 && <Component12 data={tagData} />}
                 <Footer />
         </>
 }
+
 
 export { NewsPage, postData }; 
