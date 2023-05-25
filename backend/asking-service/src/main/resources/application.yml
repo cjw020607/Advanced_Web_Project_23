@@ -1,7 +1,7 @@
 server:
     port: 9001
 
-apikey: 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
+apikey: Bearer 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
 
 spring:
     datasource:
