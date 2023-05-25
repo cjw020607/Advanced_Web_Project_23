@@ -22,11 +22,56 @@ public class CrawlingController {
 
     final NewsCrawling newscrawling;
 
-    @GetMapping("/news")
+    @GetMapping("/policynews")
     @Operation(summary = "뉴스 크롤링", description = "최신 바이오 뉴스 크롤링 결과.")
-    public ResponseEntity<List<News>> newscrawling(@RequestBody News news) {
+    public ResponseEntity<List<News>> newsPolicycrawling(@RequestBody News news) {
         try {
-            List<News> newslist = newscrawling.generateNews();
+            List<News> newslist = newscrawling.generatePolicyNews();
+
+            if (news == null) {
+                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            }
+            return new ResponseEntity<List<News>>(newslist, HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+    }
+
+    @GetMapping("/AInews")
+    @Operation(summary = "뉴스 크롤링", description = "최신 바이오 뉴스 크롤링 결과.")
+    public ResponseEntity<List<News>> newsAIcrawling(@RequestBody News news) {
+        try {
+            List<News> newslist = newscrawling.generateAINews();
+
+            if (news == null) {
+                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            }
+            return new ResponseEntity<List<News>>(newslist, HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+    }
+
+    @GetMapping("/Drugnews")
+    @Operation(summary = "뉴스 크롤링", description = "최신 바이오 뉴스 크롤링 결과.")
+    public ResponseEntity<List<News>> newsDrugcrawling(@RequestBody News news) {
+        try {
+            List<News> newslist = newscrawling.generateDrugNews();
+
+            if (news == null) {
+                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            }
+            return new ResponseEntity<List<News>>(newslist, HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+    }
+
+    @GetMapping("/Animalnews")
+    @Operation(summary = "뉴스 크롤링", description = "최신 바이오 뉴스 크롤링 결과.")
+    public ResponseEntity<List<News>> newsAnimalcrawling(@RequestBody News news) {
+        try {
+            List<News> newslist = newscrawling.generateAnimalNews();
 
             if (news == null) {
                 return new ResponseEntity<>(HttpStatus.NOT_FOUND);
