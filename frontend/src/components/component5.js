@@ -15,19 +15,19 @@ const Component5 = (props) => {
                     fontSize: '35px',
                     fontWeight: '600',
                     lineHeight: '1.18'
-                }}>{props.head}</h2>
+                }}>{props.Keyword1}</h2>
                 <div style={{ lineHeight: '30px' }} >
                     <b style={{ fontSize: '21px' }}>
-                        {props.content1}
+                        {props.Sentence1}
                         <br />
-                        {props.content2}
+                        {props.Sentence2}
                         <br />
-                        {props.content3}
+                        {props.Sentence3}
                     </b>
                     <p style={{ fontSize: '19px', marginTop: '30px' }}>
-                        {props.content4}
+                        {props.Keyword2}
                         <br />
-                        {props.content5}
+                        {props.Sentence4}
                     </p>
                 </div>
             </div>

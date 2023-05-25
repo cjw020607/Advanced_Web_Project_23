@@ -7,31 +7,47 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import gcu.backend.askingservice.service.ChatGPT;
+import gcu.backend.askingservice.model.Components;
+import java.util.*;
 
 @Service
 @Data
 
 public class Prompt {
-
-    Random random = new Random();
     final ChatGPT chatgpt;
-    JSONParser parser = new JSONParser();
+    Random random = new Random();
 
     public JSONObject promptService(String request) throws ParseException {
+
+        JSONParser parser = new JSONParser();
+        String[] components = { Components.com1, Components.com2, Components.com3, Components.com4, Components.com5,
+                Components.com6, Components.com7, Components.com8 };
+        List<Integer> numbers = new ArrayList<>();
         double randomValue = Math.random();
         int val = (int) (randomValue * 3) + 2;
-        String enter = "Give me" + val + "JSONs in line with the sentence above";
-        String jsonData = "{\n" +
-                "    \"Keyword1\": \" ???\",\n" +
-                "    \"ExplainIn2sentence\": \" ??? \",\n" +
-                "    \"Keyword2\": \" ??? \",\n" +
-                "    \"ExplainIn2sentence\": \" ??? \",\n" +
-                "    \"Keyword3\": \" ??? \",\n" +
-                "    \"ExplainIn2sentence\": \" ??? \"\n" +
-                "}";
-        String warning = "You have to answer in JSON format";
-        String gptPrompt = request + enter + jsonData + warning;
+        int[] arr1 = new int[val];
+
+        for (int i = 0; i < val; i++) {
+            double randomval = Math.random();
+            int randomidx = (int) (randomval * 7) + 1;
+            numbers.add(randomidx);
+        }
+        for (int i = 0; i < val; i++)
+            arr1[i] = numbers.get(i).intValue();
+
+        String enter = request
+                + "Below Each JSON is contents related to above question. Each JSON's should be different contents and all the contents must be related to 'BIO Contents' if the question is not related to 'BIO Contents', make it up by force to relate the sentence with bio";
+        List<String> joinCom = new ArrayList<>();
+        for (int i = 0; i < val; i++) {
+            int index = arr1[i];
+            joinCom.add(components[index]);
+        }
+
+        String joinComs = String.join(",", joinCom);
+        String warning = "Should answer in JSON format in LIST, fill the above json";
+        String gptPrompt = enter + joinComs + warning;
         String answer = chatgpt.generateText(gptPrompt);
+        System.out.println(answer);
         JSONObject jsonObject = (JSONObject) parser.parse(answer);
 
         return jsonObject;

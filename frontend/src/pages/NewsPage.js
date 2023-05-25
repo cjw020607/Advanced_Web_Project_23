@@ -69,7 +69,7 @@ const NewsPage = () => {
         }, [])
         return <>
                 <Header />
-                <Component1 title1='Bio News' contents={['Provides the latest bio-related news.', 'Learn about policies, forums and events, constraints, and the latest issues.']} />
+                <Component1 Keyword='Bio News' Sentence={['Provides the latest bio-related news.', 'Learn about policies, forums and events, constraints, and the latest issues.']} />
                 <br />
                 <Component11 tag={{ 'postData': postData, 'setTagData': setTagData, 'setSelectTag': setSelectTag, 'selectTag': selectTag }} categoryTitle={['ALL', 'POLICY', 'medicine', 'animal', 'ai']} />
                 {tagData.length !== 1 && <Component12 data={tagData} />}
