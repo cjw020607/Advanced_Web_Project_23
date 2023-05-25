@@ -16,10 +16,10 @@ const Component7 = (props) => {
                                                     <div class="col d-flex " style={{ display: "flex", flexBasis: "0", flexGrow: "1", maxWidth: "100%", posotion: "relative", width: "100%", paddingRight: "0.75rem", paddingLeft: "0.75rem", boxSizing: "border-box", color: "#000000", font: "SegoeUI", wordWrap: "break-word", textAlign: "left", fontSize: "1rem", fontWeight: "400", lineHeight: "1.5" }} >
                                                         <div class="card-body align-self-center py-4 py-lg-5 pr-g pr-sm-4 pr-md-4 pl-g pl-sm-4 px-xl-5 " style={{ paddingLeft: "3rem", paddingRight: "3rem", paddingBottom: "3rem", paddingTop: "3rem", alignSelf: "center", flex: "1 1 auto", position: "relative", boxSizing: "border-box", display: "block", wordWrap: "break-word", textAlign: "left", fontSize: "1rem", fontWeight: "400", lineHeight: "1.5", color: "#000000", font: "SegoeUI" }} >
                                                             <h2 style={{ fontSize: "2.3rem", marginBottom: "1.25rem", fontWeight: "600", lineHeight: "1.2", marginTop: 0, display: "block", marginBlockStart: "0.83em", marginBlockEnd: "0.83em", marginInlineStart: "0px", marginInlineEnd: "0px", textAlign: "left", wordWrap: "break-word", boxSizing: "border-box", color: "#000000", font: "SegoeUI" }}>
-                                                                {props.title}
+                                                                {props.TitleIn4words}
                                                             </h2>
                                                             <div style={{ marginBottm: "0", boxSizing: "border-box", display: "block", wordWrap: "break-word", textAlign: "left", fontSize: "1rem", fontWeight: "400", lineHeight: "1.5", color: "#000", font: "SegoeUI" }}>
-                                                                {props.content}
+                                                                {props.ExplainIn1sentence}
                                                             </div>
                                                         </div>
                                                     </div>
@@ -39,7 +39,7 @@ const Component7 = (props) => {
 
                                                                 <a data-bi-cn="Home" data-bi-ecn="가정" data-bi-ct="cta" data-bi-pa="body" data-bi-bhvr="230" data-bi-tags="{&quot;BiLinkName&quot;:&quot;Home&quot;}" class="cta    " style={{ marginRight: 0, paddingRight: "1.68em", color: "#FFFFFF", display: "inlineBlock", position: "relative", textDecoration: "none", fontWeight: "600", boxSizing: "border-box", cursor: "pointer" }} data-target={props.link1} aria-label="Teams의 가정 옵션입니다." target="_self" href={props.link1}>
                                                                     <span style={{ boxSizing: "border-box", color: "#FFFFFF", fontWeight: "600", cursor: "pointer", fontSize: "17px" }}>
-                                                                        {props.bar1}
+                                                                        {props.RelatedTopic1}
                                                                     </span>
                                                                 </a>
                                                             </div>
@@ -63,7 +63,7 @@ const Component7 = (props) => {
 
                                                                 <a data-bi-cn="Business" data-bi-ecn="비즈니스" data-bi-ct="cta" data-bi-pa="body" data-bi-bhvr="230" data-bi-tags="{&quot;BiLinkName&quot;:&quot;Business&quot;}" class="cta    " style={{ textDecoration: "none" }} data-target={props.link2} aria-label="Teams의 비즈니스 옵션입니다." target="_self" href={props.link2}>
                                                                     <span style={{ boxSizing: "border-box", color: "#FFFFFF", fontWeight: "600", cursor: "pointer", fontSize: "17px" }}>
-                                                                        {props.bar2}
+                                                                        {props.RelatedTopic2}
                                                                     </span>
                                                                 </a>
                                                             </div>
@@ -87,7 +87,7 @@ const Component7 = (props) => {
 
                                                                 <a data-bi-cn="Enterprise" data-bi-ecn="엔터프라이즈" data-bi-ct="cta" data-bi-pa="body" data-bi-bhvr="230" data-bi-tags="{&quot;BiLinkName&quot;:&quot;Enterprise&quot;}" class="cta    " style={{ textDecoration: "none" }} data-target={props.link3} aria-label="Teams의 엔터프라이즈 옵션입니다." target="_self" href={props.link3}>
                                                                     <span style={{ boxSizing: "border-box", color: "#FFFFFF", fontWeight: "600", cursor: "pointer", fontSize: "17px" }}>
-                                                                        {props.bar3}
+                                                                        {props.RelatedTopic3}
                                                                     </span>
                                                                 </a>
                                                             </div>
@@ -111,7 +111,7 @@ const Component7 = (props) => {
 
                                                                 <a data-bi-cn="Education" data-bi-ecn="교육" data-bi-ct="cta" data-bi-pa="body" data-bi-bhvr="230" data-bi-tags="{&quot;BiLinkName&quot;:&quot;Education&quot;}" class="cta    " style={{ textDecoration: "none" }} data-target={props.link4} aria-label="Teams의 교육 옵션입니다." target="_self" href={props.link4}>
                                                                     <span style={{ boxSizing: "border-box", color: "#FFFFFF", fontWeight: "600", cursor: "pointer", fontSize: "17px" }}>
-                                                                        {props.bar4}
+                                                                        {props.RelatedTopic4}
                                                                     </span>
                                                                 </a>
                                                             </div>
