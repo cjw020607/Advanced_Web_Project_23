@@ -1,20 +1,23 @@
 package gcu.backend.crawlingservice.controller;
 
 import javax.annotation.Tainted;
+
 import org.springframework.http.HttpStatus;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
+//import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import lombok.AllArgsConstructor;
 import java.util.List;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-// import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import gcu.backend.crawlingservice.model.News;
 import gcu.backend.crawlingservice.model.Image;
+import gcu.backend.crawlingservice.model.Keyword;
 import gcu.backend.crawlingservice.service.NewsCrawling;
 import gcu.backend.crawlingservice.service.ImageCrawling;
 
@@ -86,12 +89,12 @@ public class CrawlingController {
         }
     }
 
-    @GetMapping("/image/{keyword}")
+    @PostMapping("/image")
     @Operation(summary = "이미지 크롤링", description = "이미지 크롤링 결과")
-    public ResponseEntity<List<Image>> imageCrawling(@PathVariable String[] keyword) {
+    public ResponseEntity<List<Image>> imageCrawling(@RequestBody Keyword keyword) {
 
         try {
-            List<Image> imageurl = imagecrawling.imageCrawling(keyword);
+            List<Image> imageurl = imagecrawling.imageCrawling(keyword.getWords());
 
             if (imageurl == null) {
                 return new ResponseEntity<>(HttpStatus.NOT_FOUND);
