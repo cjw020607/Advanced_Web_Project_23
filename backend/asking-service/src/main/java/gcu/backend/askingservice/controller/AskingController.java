@@ -32,9 +32,9 @@ public class AskingController {
     final ChatGPT chatGPT;
     final Prompt prompt;
 
-    @PostMapping("/ask")
+    @PostMapping("/chatgpt")
     @Operation(summary = "답변 받기", description = "질문에 대한 답변을 조회한다.")
-    public ResponseEntity<String> askToSoonyeol(@RequestBody Request request) {
+    public ResponseEntity<String> askToChatGPT(@RequestBody Request request) {
         if (request.getQuestion() == null) {
             return ResponseEntity.badRequest().body("Request is null");
         }
@@ -43,7 +43,7 @@ public class AskingController {
 
     @PostMapping("/prompt/")
     @Operation(summary = "prompt service", description = "prompt service입니다.")
-    public ResponseEntity<List<Map<String, Object>>> promptService(@RequestBody Request request) {
+    public ResponseEntity<Map<String, Map<String, Object>>> promptService(@RequestBody Request request) {
         if (request == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }

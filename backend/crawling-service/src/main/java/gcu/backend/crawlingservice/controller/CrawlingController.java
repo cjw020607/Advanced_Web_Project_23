@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import gcu.backend.crawlingservice.model.News;
-import gcu.backend.crawlingservice.model.Image;
+import gcu.backend.crawlingservice.model.Images;
 import gcu.backend.crawlingservice.model.Keyword;
 import gcu.backend.crawlingservice.service.NewsCrawling;
 import gcu.backend.crawlingservice.service.ImageCrawling;
@@ -94,15 +94,15 @@ public class CrawlingController {
 
     @PostMapping("/image")
     @Operation(summary = "이미지 크롤링", description = "이미지 크롤링 결과")
-    public ResponseEntity<List<Image>> imageCrawling(@RequestBody Keyword keyword) {
+    public ResponseEntity<Images> imageCrawling(@RequestBody Keyword keyword) {
         System.out.println(keyword.toString());
         try {
-            List<Image> imageurl = imagecrawling.imageCrawling(keyword.getWords());
+            Images imageurl = imagecrawling.imageCrawling(keyword.getWords());
 
             if (imageurl == null) {
                 return new ResponseEntity<>(HttpStatus.NOT_FOUND);
             }
-            return new ResponseEntity<List<Image>>(imageurl, HttpStatus.OK);
+            return new ResponseEntity<Images>(imageurl, HttpStatus.OK);
         } catch (Exception e) {
             log.info(e.toString());
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);

@@ -11,10 +11,12 @@ import lombok.Data;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+
 import gcu.backend.askingservice.service.ChatGPT;
 import gcu.backend.askingservice.feign.IMGCrawling;
 import gcu.backend.askingservice.model.Components;
 import gcu.backend.askingservice.model.IMGResponse;
+import gcu.backend.askingservice.model.JsonResponse;
 import gcu.backend.askingservice.model.Keyword;
 
 import java.util.*;
@@ -28,11 +30,12 @@ public class Prompt {
     @Autowired
     private IMGCrawling imgCrawling;
 
-    public List<Map<String, Object>> promptService(String request)
+    public Map<String, Map<String, Object>> promptService(String request)
             throws ParseException, JsonMappingException, JsonProcessingException {
 
         String[] components = { Components.com1, Components.com2, Components.com3, Components.com4, Components.com5,
                 Components.com6, Components.com7, Components.com10 };
+        String[] names = { "com1", "com2", "com3", "com4", "com5", "com6", "com7", "com10" };
         List<Integer> numbers = new ArrayList<>();
         double randomValue = Math.random();
         int val = (int) (randomValue * 3) + 2;
@@ -46,27 +49,39 @@ public class Prompt {
         for (int i = 0; i < val; i++)
             arr1[i] = numbers.get(i).intValue();
 
-        String enter = request
-                + "Below Each JSON is contents related to above question. Each JSON's should be different contents and all the contents must be related to 'BIO Contents' if the question is not related to 'BIO Contents', make it up by force to relate the sentence with bio";
-        List<String> joinCom = new ArrayList<>();
+        String enter = "Question : " + request
+                + "\nBelow Each JSON is contents related to above question.\nEach JSON's should be different contents and all the contents must be related to 'BIO Contents'\nif the question is not related to 'BIO Contents', make it up by force to relate the sentence with bio\n";
+        // List<String> joinCom = new ArrayList<>();
+        // for (int i = 0; i < val; i++) {
+        // int index = arr1[i];
+        // joinCom.add(components[index]);
+        // }
+
+        // String joinComs = String.join(",", joinCom);
+        Map<String, String> joinComsMap = new HashMap();
+
         for (int i = 0; i < val; i++) {
             int index = arr1[i];
-            joinCom.add(components[index]);
+            joinComsMap.put(names[index], components[index]);
         }
+        String jsons = "{";
+        for (Map.Entry<String, String> entry : joinComsMap.entrySet()) {
+            jsons += "\"" + entry.getKey() + "\":" + entry.getValue() + ",";
+        }
+        jsons = jsons.substring(0, jsons.length() - 1);
+        jsons += "}";
 
-        String joinComs = String.join(",", joinCom);
-        String warning = "Should answer in JSON format in LIST, fill the above json";
-        String gptPrompt = enter + joinComs + warning;
+        String warning = "\nShould answer in JSON format, fill the above json";
+        String gptPrompt = enter + jsons + warning;
+        System.out.println(gptPrompt);
         String answer = chatgpt.generateText(gptPrompt);
         System.out.println(answer);
+
         ObjectMapper objectMapper = new ObjectMapper();
-        // List<String> test = objectMapper.readValue(answer, List[].class);
-
-        List<Map<String, Object>> list;
-        // List<Map<String, Object>> list = objectMapper.readValue(answer,
-        // new TypeReference<List<Map<String, Object>>>() {
-        // });
-
+        Map<String, Map<String, Object>> list = objectMapper.readValue(answer, Map.class);
+        // JsonResponse json = objectMapper.readValue(answer, JsonResponse.class);
+        System.out.println("list");
+        System.out.println(list);
         // for (Map<String, Object> map : list) {
         // if (map.containsKey("SummaryWords")) {
         // Keyword words = Keyword.builder().words((List<String>)
@@ -75,6 +90,15 @@ public class Prompt {
         // map.put("imgurl", response.getImgurl());
         // }
         // }
+
+        for (Map.Entry<String, Map<String, Object>> entry : list.entrySet()) {
+            if (entry.getValue().containsKey("SummaryWords")) {
+                Keyword words = Keyword.builder().words((List<String>) entry.getValue().get("SummaryWords")).build();
+                IMGResponse response = imgCrawling.getImgResponse(words);
+                System.out.println(response.getImgurl());
+                entry.getValue().put("imgurl", response.getImgurl());
+            }
+        }
 
         return list;
     }
