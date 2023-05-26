@@ -60,18 +60,21 @@ public class Prompt {
         String answer = chatgpt.generateText(gptPrompt);
         System.out.println(answer);
         ObjectMapper objectMapper = new ObjectMapper();
+        // List<String> test = objectMapper.readValue(answer, List[].class);
 
-        List<Map<String, Object>> list = objectMapper.readValue(answer,
-                new TypeReference<List<Map<String, Object>>>() {
-                });
+        List<Map<String, Object>> list;
+        // List<Map<String, Object>> list = objectMapper.readValue(answer,
+        // new TypeReference<List<Map<String, Object>>>() {
+        // });
 
-        for (Map<String, Object> map : list) {
-            if (map.containsKey("SummaryWords")) {
-                Keyword words = Keyword.builder().words((List<String>) map.get("SummaryWords")).build();
-                IMGResponse response = imgCrawling.getImgResponse(words);
-                map.put("imgurl", response.getImgurl());
-            }
-        }
+        // for (Map<String, Object> map : list) {
+        // if (map.containsKey("SummaryWords")) {
+        // Keyword words = Keyword.builder().words((List<String>)
+        // map.get("SummaryWords")).build();
+        // IMGResponse response = imgCrawling.getImgResponse(words);
+        // map.put("imgurl", response.getImgurl());
+        // }
+        // }
 
         return list;
     }
