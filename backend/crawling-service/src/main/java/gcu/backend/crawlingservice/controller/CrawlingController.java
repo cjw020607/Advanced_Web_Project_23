@@ -98,7 +98,7 @@ public class CrawlingController {
         System.out.println(keyword.toString());
         try {
             Images imageurl = imagecrawling.imageCrawling(keyword.getWords());
-
+            System.out.println(imageurl.toString());
             if (imageurl == null) {
                 return new ResponseEntity<>(HttpStatus.NOT_FOUND);
             }
