@@ -38,12 +38,13 @@ public class Prompt {
         String[] names = { "com1", "com2", "com3", "com4", "com5", "com6", "com7", "com10" };
         List<Integer> numbers = new ArrayList<>();
         double randomValue = Math.random();
-        int val = (int) (randomValue * 3) + 2;
+        int val = (int) (randomValue * 5) + 4;
+        val = val >= 8 ? 8 : val;
         int[] arr1 = new int[val];
 
         for (int i = 0; i < val; i++) {
             double randomval = Math.random();
-            int randomidx = (int) (randomval * 7) + 1;
+            int randomidx = (int) (randomval * 8);
             numbers.add(randomidx);
         }
         for (int i = 0; i < val; i++)
@@ -78,7 +79,10 @@ public class Prompt {
         System.out.println(answer);
 
         ObjectMapper objectMapper = new ObjectMapper();
-        Map<String, Map<String, Object>> list = objectMapper.readValue(answer, Map.class);
+        TypeReference<Map<String, Map<String, Object>>> typeRef = new TypeReference<Map<String, Map<String, Object>>>() {
+        };
+
+        Map<String, Map<String, Object>> list = objectMapper.readValue(answer, typeRef);
         // JsonResponse json = objectMapper.readValue(answer, JsonResponse.class);
         System.out.println("list");
         System.out.println(list);

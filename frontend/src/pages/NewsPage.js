@@ -11,7 +11,7 @@ const NewsPage = () => {
         const [tagData, setTagData] = useState([{ gourl: '', imgurl: '', tag: [], title: '' }])
         const [selectTag, setSelectTag] = useState('ALL')
 
-        const data1 = { "Keyword": "Bio News", "Sentence1Limit15Words": [" Provides the latest bio-related news. ", "Learn about policies, forums and events, constraints, and the latest issues."] }
+        const data1 = { "Keyword": "News Related to BIO", "Sentence1Limit15Words": [" Provides the latest bio-related news. ", "Learn about policies, forums and events, constraints, and the latest issues."] }
         useEffect(() => {
                 GetAllnews().then((res) => { console.log(res.data); setTagData(res.data) })
         }, [])

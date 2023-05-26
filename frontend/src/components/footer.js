@@ -11,8 +11,8 @@ const Footer = () => {
     const infostyle = { color: '#888', fontSize: '14px', fontWeight: '400', letterSpacing: '-0.3pt', lineHeight: '180%', margin: '0', marginRight: '14px', wordBreak: 'keep-all' }
     const location = useLocation();
     return <>
-        {location['pathname'] !== '/' && <div style={{ maxWidth: '1390px', width: '100%', height: '1px', background: '#ddd', margin: '0 auto', padding: '0 20px' }} />}
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '60px 20px 80px 116px', maxWidth: '1390px', width: '100%', boxSizing: 'border-box', position: 'relative', margin: '0 auto' }}>
+        <div style={{ maxWidth: '1550px', width: '100%', height: '1px', background: '#ddd', margin: '0 auto', padding: '0 20px' }} />
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '60px 20px 80px 116px', maxWidth: '1550px', width: '100%', boxSizing: 'border-box', position: 'relative', margin: '0 auto' }}>
             <div>
                 <h1 style={{ width: '154px', height: '59px', marginBottom: '70px', padding: 0, }}><img src={bannerImg} style={{ width: '100%', borderRadius: '10px' }} /></h1>
                 <p style={{ ...infostyle, display: 'inline-block' }}>(주)순두부열라면바이오</p>

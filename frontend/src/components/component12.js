@@ -5,7 +5,7 @@ const Component12 = (propss) => {
         const tags = props.tags
         let tagString = tags.join(' · ')
         return <div style={{ minHeight: '0px', minWidth: '0px' }}>
-            <a style={{ wordBreak: 'keep-all', margin: '0', padding: '0', border: '0', verticalAlign: 'baseline', boxSizing: 'border-box', display: 'block', color: '#191919', textDecoration: 'none', cursor: 'pointer' }} className="ke-thumb-list__link" href={props.gourl} >
+            <a target='_blank' rel='noreferrer' style={{ wordBreak: 'keep-all', margin: '0', padding: '0', border: '0', verticalAlign: 'baseline', boxSizing: 'border-box', display: 'block', color: '#191919', textDecoration: 'none', cursor: 'pointer' }} className="ke-thumb-list__link" href={props.gourl}  >
                 <div style={{ height: 'auto', opacity: '1', display: 'block', width: 'auto', transition: 'opacity .3s', }} >
                     <img style={{ objectFit: 'contain', aspectRatio: ' 476 / 250', width: '100%', borderRadius: '20px', overflow: 'hidden' }} data-unveil={props.imgurl} src={props.imgurl} alt="" />
                 </div>

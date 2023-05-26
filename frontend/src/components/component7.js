@@ -3,7 +3,7 @@ import React from "react";
 const Component7 = (props) => {
     return (
         <>
-            <div class="layout-container" style={{ float: "left", clear: "none", width: "100%", boxSizing: "border-box", display: "block" }}>
+            <div class="layout-container" style={{ clear: "none", width: "100%", boxSizing: "border-box", display: "block" }}>
                 <div class="aem-Grid" style={{ display: "block", width: "100%", boxSizing: "border" }}>
                     <div class="container" id="layout-container-uid9715" data-componentname="layout-container-uid9715" style={{ maxWidth: "1600px", paddingRight: "5%", paddingLeft: "5%", width: "90%", boxSizing: "contentBox", marginRight: "auto", marginLeft: "auto", display: "block", color: "#000000", textAlign: "left", fontWeight: "400", lineHeight: "1.5", fontSize: "1rem" }}>
                         <div class="mosaic aem-GridColumn aem-GridColumn--default--12" data-component-id="8bd78f73dea974d25cbd8dadcc2b89fb" style={{ boxSizing: "border-box", clear: "both", margin: "0 90px 0 -130px" }}>
@@ -49,7 +49,7 @@ const Component7 = (props) => {
                                                         </div>
                                                     </div>
                                                     <div class="w-100 h-100" style={{ width: "100%", height: "100%", boxSizing: "border-box", display: "block" }}>
-                                                        <img class="img-fluid img-object-cover  blur-up lazyloaded" alt="" style={{ filter: "blur(0)", opacity: 1, transition: "opacity 300ms", objectFit: "cover", height: "100%", width: "100%", maxWidth: "100%", verticalAlign: "middle", boxSizing: "border-box", overflowClipMargin: "content-box", overflow: "clip" }} data-srcset={props.img1} data-src={props.img1} srcset={props.img1}>
+                                                        <img class="img-fluid img-object-cover  blur-up lazyloaded" alt="" style={{ filter: "blur(0)", opacity: 1, transition: "opacity 300ms", objectFit: "cover", height: "100%", width: "100%", maxWidth: "100%", verticalAlign: "middle", boxSizing: "border-box", overflowClipMargin: "content-box", overflow: "clip" }} data-srcset={props.data.imgurl[0]} data-src={props.data.imgurl[0]} srcset={props.data.imgurl[0]}>
                                                         </img>
                                                     </div>
                                                 </div>
@@ -74,7 +74,7 @@ const Component7 = (props) => {
                                                         </div>
                                                     </div>
                                                     <div class="w-100 h-100" style={{ width: "100%", height: "100%", boxSizing: "border-box", display: "block" }}>
-                                                        <img class="img-fluid img-object-cover  blur-up lazyloaded" alt="" style={{ filter: "blur(0)", opacity: 1, transition: "opacity 300ms", objectFit: "cover", height: "100%", width: "100%", maxWidth: "100%", verticalAlign: "middle", boxSizing: "border-box", overflowClipMargin: "content-box", overflow: "clip" }} data-srcset={props.img2} data-src={props.img2} srcset={props.img2}>
+                                                        <img class="img-fluid img-object-cover  blur-up lazyloaded" alt="" style={{ filter: "blur(0)", opacity: 1, transition: "opacity 300ms", objectFit: "cover", height: "100%", width: "100%", maxWidth: "100%", verticalAlign: "middle", boxSizing: "border-box", overflowClipMargin: "content-box", overflow: "clip" }} data-srcset={props.data.imgurl[1]} data-src={props.data.imgurl[1]} srcset={props.data.imgurl[1]}>
                                                         </img>
                                                     </div>
                                                 </div>
@@ -100,7 +100,7 @@ const Component7 = (props) => {
                                                         </div>
                                                     </div>
                                                     <div class="w-100 h-100" style={{ width: "100%", height: "100%", boxSizing: "border-box", display: "block" }}>
-                                                        <img class="img-fluid img-object-cover  blur-up lazyloaded" alt="" style={{ filter: "blur(0)", opacity: 1, transition: "opacity 300ms", objectFit: "cover", height: "100%", width: "100%", maxWidth: "100%", verticalAlign: "middle", boxSizing: "border-box", overflowClipMargin: "content-box", overflow: "clip" }} data-srcset={props.img3} data-src={props.img3} srcset={props.img3}>
+                                                        <img class="img-fluid img-object-cover  blur-up lazyloaded" alt="" style={{ filter: "blur(0)", opacity: 1, transition: "opacity 300ms", objectFit: "cover", height: "100%", width: "100%", maxWidth: "100%", verticalAlign: "middle", boxSizing: "border-box", overflowClipMargin: "content-box", overflow: "clip" }} data-srcset={props.data.imgurl[2]} data-src={props.data.imgurl[2]} srcset={props.data.imgurl[2]}>
                                                         </img>
                                                     </div>
                                                 </div>
@@ -126,7 +126,7 @@ const Component7 = (props) => {
                                                         </div>
                                                     </div>
                                                     <div class="w-100 h-100" style={{ width: "100%", height: "100%", boxSizing: "border-box", display: "block" }}>
-                                                        <img class="img-fluid img-object-cover  blur-up lazyloaded" alt="" style={{ filter: "blur(0)", opacity: 1, transition: "opacity 300ms", objectFit: "cover", height: "100%", width: "100%", maxWidth: "100%", verticalAlign: "middle", boxSizing: "border-box", overflowClipMargin: "content-box", overflow: "clip" }} data-srcset={props.img4} data-src={props.img4} srcset={props.img4} src={props.img4}>
+                                                        <img class="img-fluid img-object-cover  blur-up lazyloaded" alt="" style={{ filter: "blur(0)", opacity: 1, transition: "opacity 300ms", objectFit: "cover", height: "100%", width: "100%", maxWidth: "100%", verticalAlign: "middle", boxSizing: "border-box", overflowClipMargin: "content-box", overflow: "clip" }} data-srcset={props.data.imgurl[3]} data-src={props.data.imgurl[3]} srcset={props.data.imgurl[3]} src={props.data.imgurl[3]}>
                                                         </img>
                                                     </div>
                                                 </div>

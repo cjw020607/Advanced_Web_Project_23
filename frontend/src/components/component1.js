@@ -1,11 +1,12 @@
 import React from "react";
+import { useLocation } from 'react-router-dom';
 
 const Component1 = (props) => {
-
+    const location = useLocation();
     return (
         <>
 
-            <div style={{ marginTop: '30px', marginBottom: '150px' }}>
+            <div style={{ marginTop: '30px', marginBottom: location.pathname === '/tag' ? '40px' : '150px' }}>
                 <h2 style={{
                     fontSize: "42px", letterSpacing: "-2.5px", display: "flex", alignItems: "center",
                     justifyContent: 'center', padding: "20px", textTransform: 'uppercase',

@@ -19,4 +19,11 @@ const GetAllnews = () => {
     return axios.get('http://localhost:9003/crawling/Allnews')
 }
 
-export { GetPolicyNews, GetDrugNews, GetAnimalNews, GetAInews, GetAllnews }
+const PostPrompt = (prompt) => {
+    return axios.post('http://localhost:9003/asking/prompt',
+        {
+            question: prompt
+        })
+}
+
+export { GetPolicyNews, GetDrugNews, GetAnimalNews, GetAInews, GetAllnews, PostPrompt }

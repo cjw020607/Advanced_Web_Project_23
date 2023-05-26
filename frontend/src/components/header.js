@@ -26,7 +26,7 @@ const Header = () => {
     const Li = (props) => {
         return <li style={{ display: 'inline-block', position: 'relative' }}>
             <Link style={{
-                ...a, display: 'block', height: '100%', textTransform: 'uppercase', color: '#' + color, padding: '0 36px', margin: '0', fontSize: '15px', fontWeight: 'bold'
+                ...a, display: 'block', height: '100%', color: '#' + color, padding: '0 36px', margin: '0', fontSize: '15px', fontWeight: 'bold'
             }} to={{ pathname: props.src }}>
                 {(location['pathname'] === props.src) && <div style={{ position: 'absolute', left: '35px', top: '30px', width: 'calc(100% - 70px)', display: 'inline', height: '2px', backgroundColor: '#1ec545' }} />}
                 {props.children}
@@ -50,16 +50,18 @@ const Header = () => {
                         {/*<img style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: '0' }} src={bannerImg}></img>*/}
                     </Link>
                 </h1>
-                <ul style={{ position: 'relative', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center', listStyle: 'none', padding: '0' }}>
-                    <Li src="/tag">News</Li>
+                {/* <ul style={{ position: 'relative', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center', listStyle: 'none', padding: '0' }}>
+                    <Li src="/tag">News BIO</Li>
                     <Li src="/info1">Medicine</Li>
                     <Li src="/info2">Bio&technology</Li>
                     <Li src='/info3'>HealthCare</Li>
-                </ul>
+                </ul> */}
                 <div style={{
-                    width: '150px', display: 'flex', alignItems: 'center', color: '#' + color
+                    width: '200px', display: 'flex', alignItems: 'center', color: '#' + color
                 }}>
-                    <Link style={{ ...a, color: '#' + color }} to={{ pathname: '/market' }}>Gachon University</Link>
+                    <Li src="/tag">Browse BIO News</Li>
+                    {/* <Link style={{ ...a, color: '#' + color }} to={{ pathname: '/tag' }}>Gachon University</Link> */}
+                    {/* <Link style={{ ...a, color: '#' + color }} to={{ pathname: '/market' }}>Gachon University</Link> */}
                 </div>
             </div >
         </div ></>

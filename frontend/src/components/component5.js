@@ -31,7 +31,7 @@ const Component5 = (props) => {
                     </p>
                 </div>
             </div>
-            <img src={props.img} style={{ margin: '60px auto', display: 'block', width: "1000px", height: "600px", borderRadius: '18px' }}></img>
+            <img src={props.data.imgurl[0]} style={{ margin: '60px auto', display: 'block', width: "1000px", height: "600px", borderRadius: '18px' }}></img>
 
         </>
     );

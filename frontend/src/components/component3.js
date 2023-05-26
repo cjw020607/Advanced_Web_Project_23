@@ -77,7 +77,7 @@ const Component3 = (props) => {
                                     maxWidth: "100%",
                                     verticalAlign: "middle",
                                     aspectRatio: ' 250 / 310', overflow: 'hidden', objectFit: 'cover'
-                                }} src={props.img} alt="커피 사진"></img>
+                                }} src={props.data.imgurl[0]} alt=""></img>
                             </div>
                         </div>
                     </div>
