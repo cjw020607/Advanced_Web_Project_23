@@ -33,18 +33,18 @@ public class Prompt {
     public Map<String, Map<String, Object>> promptService(String request)
             throws ParseException, JsonMappingException, JsonProcessingException {
 
-        String[] components = { Components.com1, Components.com2, Components.com3, Components.com4, Components.com5,
+        String[] components = { Components.com2, Components.com3, Components.com4, Components.com5,
                 Components.com6, Components.com7, Components.com10 };
-        String[] names = { "com1", "com2", "com3", "com4", "com5", "com6", "com7", "com10" };
+        String[] names = { "com2", "com3", "com4", "com5", "com6", "com7", "com10" };
         List<Integer> numbers = new ArrayList<>();
         double randomValue = Math.random();
         int val = (int) (randomValue * 5) + 4;
-        val = val >= 8 ? 8 : val;
+        val = val >= 7 ? 7 : val;
         int[] arr1 = new int[val];
 
         for (int i = 0; i < val; i++) {
             double randomval = Math.random();
-            int randomidx = (int) (randomval * 8);
+            int randomidx = (int) (randomval * 7);
             numbers.add(randomidx);
         }
         for (int i = 0; i < val; i++)
@@ -52,19 +52,15 @@ public class Prompt {
 
         String enter = "Question : " + request
                 + "\nBelow Each JSON is contents related to above question.\nEach JSON's should be different contents and all the contents must be related to 'BIO Contents'\nif the question is not related to 'BIO Contents', make it up by force to relate the sentence with bio\n";
-        // List<String> joinCom = new ArrayList<>();
-        // for (int i = 0; i < val; i++) {
-        // int index = arr1[i];
-        // joinCom.add(components[index]);
-        // }
 
-        // String joinComs = String.join(",", joinCom);
         Map<String, String> joinComsMap = new HashMap();
 
+        joinComsMap.put("com1", Components.com1);
         for (int i = 0; i < val; i++) {
             int index = arr1[i];
             joinComsMap.put(names[index], components[index]);
         }
+
         String jsons = "{";
         for (Map.Entry<String, String> entry : joinComsMap.entrySet()) {
             jsons += "\"" + entry.getKey() + "\":" + entry.getValue() + ",";

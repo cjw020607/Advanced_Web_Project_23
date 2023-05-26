@@ -7,20 +7,21 @@ public class Components {
                         "\"Sentence1Limit15Words\": [\" ??? \" , \" ??? \"]" +
                         "}";
         public static String com2 = "{" +
+                        "\"SummaryWords\": [\" ???? \" ]," +
                         "\"AnswerKeyword\": \" ???\"," +
                         "\"HomepageURL\": \" ??? \"," +
-                        "\"Content4Words\": \" ??? \"," +
-                        "\"SummaryWords\": [\" ???? \" ]" +
+                        "\"Content4Words\": \" ??? \"" +
                         "}";
         public static String com3 = "{" +
+                        "\"SummaryWords\": [\" ???? \" ]," +
                         "\"Keyword1\": \" ???\"," +
                         "\"Keyword2\": \" ??? \"," +
                         "\"ListOneWord1\": \" ??? \"," +
                         "\"ListOneWord2\": \" ???\"," +
                         "\"ListOneWord3\": \" ??? \"," +
                         "\"ListOneWord4\": \" ??? \"," +
-                        "\"Content2Lines\": \" ??? \"," +
-                        "\"SummaryWords\": [\" ???? \" ]" +
+                        "\"Content2Lines\": \" ??? \"" +
+
                         "}";
 
         public static String com4 = "{" +
@@ -32,13 +33,13 @@ public class Components {
                         "}";
 
         public static String com5 = "{" +
+                        "\"SummaryWords\": [\" ???? \" ]," +
                         "\"Keyword1\": \" ???\"," +
                         "\"Sentence1Short\": \" ??? \"," +
                         "\"Sentence2Short\": \" ??? \"," +
                         "\"Sentence3Short\": \" ???\"," +
                         "\"Keyword2\": \" ??? \"," +
-                        "\"Sentence4\": \" ??? \"," +
-                        "\"SummaryWords\": [\" ???? \" ]" +
+                        "\"Sentence4\": \" ??? \"" +
                         "}";
 
         public static String com6 = "{" +
@@ -65,9 +66,9 @@ public class Components {
                         "\"RelatedHomepage4\": \" ??? \"" +
                         "}";
         public static String com10 = "{" +
+                        "\"SummaryWords\": [\" ???? \"]," +
                         "\"Keyword1\": \" ???\"," +
-                        "\"ExplainIn2sentence\": [\" ???? \",\" ???? \",\" ???? \"]," +
-                        "\"SummaryWords\": [\" ???? \"]" +
+                        "\"ExplainIn2sentence\": [\" ???? \",\" ???? \",\" ???? \"]" +
                         "}";
 
 }
