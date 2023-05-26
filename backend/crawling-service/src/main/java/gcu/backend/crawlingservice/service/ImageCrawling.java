@@ -2,7 +2,7 @@ package gcu.backend.crawlingservice.service;
 
 import org.springframework.stereotype.Service;
 
-import gcu.backend.crawlingservice.model.Image;
+import gcu.backend.crawlingservice.model.Images;
 import lombok.Data;
 
 import java.util.*;
@@ -16,9 +16,9 @@ import org.jsoup.select.Elements;;
 @Service
 public class ImageCrawling {
 
-    public List<Image> imageCrawling(List<String> keyword) throws IOException, InterruptedException {
+    public Images imageCrawling(List<String> keyword) throws IOException, InterruptedException {
 
-        List<Image> Image = new ArrayList<>();
+        List<String> Image = new ArrayList<>();
 
         for (int i = 0; i < keyword.size(); i++) {
             // url date값 오늘 날짜 불러와서 넣으면 될듯 -> 최신뉴스 반영, 그날 그날 뉴스 반영
@@ -28,13 +28,13 @@ public class ImageCrawling {
             Document doc = Jsoup.connect(url).get();
             Elements imgelement = doc.getElementsByAttributeValue("class", "mui-1l7n00y-thumbnail");
             String imgUrl = imgelement.attr("src"); // 사진링크
-
-            Image image = new Image();
-            image.setImgurl(imgUrl);
-            Image.add(image);
+            System.out.println(imgUrl);
+            Image.add(imgUrl);
         }
+        Images images = new Images();
+        images.setImgurl(Image);
 
-        return Image;
+        return images;
     }
 
 }

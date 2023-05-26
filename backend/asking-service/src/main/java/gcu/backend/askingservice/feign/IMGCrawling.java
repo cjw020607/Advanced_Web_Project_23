@@ -1,14 +1,15 @@
 package gcu.backend.askingservice.feign;
 
+import java.util.List;
+
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import gcu.backend.askingservice.model.IMGResponse;
 import gcu.backend.askingservice.model.Keyword;
 
-@FeignClient(name = "crawling-service")
+@FeignClient(name = "CRAWLING-SERVICE")
 public interface IMGCrawling {
-    @PostMapping(value = "/image", consumes = "application/json", produces = "application/jsob")
-    IMGResponse getImgResponse(@RequestBody Keyword Keyword);
+    @PostMapping(value = "/image")
+    IMGResponse getImgResponse(Keyword Keyword);
 }
