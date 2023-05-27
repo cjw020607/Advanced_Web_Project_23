@@ -23,7 +23,7 @@ const Footer = () => {
                 }} />031-750-8659</p>
                 < p style={{ ...infostyle, display: 'inline-block' }}><div style={{ display: 'inline-block', width: '14px', height: '12px', background: `url(${mail}) no-repeat center / cover`, marginRight: '5px' }} />swdm@gachon.ac.kr</p>
             </div>
-            <div style={{ display: 'grid', width: '50%', gridTemplateColumns: 'repeat(4, auto)', gap: '20px', margin: 0, padding: 0 }}>
+            <div style={{ paddingRight: '100px', }}>
                 <ul style={ulstyle}>
                     <span style={spanstyle}>
                         Members
@@ -59,57 +59,7 @@ const Footer = () => {
                         </div>
                     </li>
                 </ul>
-                <ul style={ulstyle}>
-                    <span style={spanstyle}>
-                        Medicine
-                    </span>
-                    <li style={listSyle}>
-                        <Link style={linkstyle} to={{ pathname: '/' }}>About us</Link>
-                    </li>
-                    <li style={listSyle}>
-                        <Link style={linkstyle} to={{ pathname: '/' }}>About us</Link>
-                    </li>
-                    <li style={listSyle}>
-                        <Link style={linkstyle} to={{ pathname: '/' }}>About us</Link>
-                    </li>
-                    <li style={listSyle}>
-                        <Link style={linkstyle} to={{ pathname: '/' }}>About us</Link>
-                    </li>
-                </ul>
-                <ul style={ulstyle}>
-                    <span style={spanstyle}>
-                        BioTech
-                    </span>
-                    <li style={listSyle}>
-                        <Link style={linkstyle} to={{ pathname: '/' }}>About us</Link>
-                    </li>
-                    <li style={listSyle}>
-                        <Link style={linkstyle} to={{ pathname: '/' }}>About us</Link>
-                    </li>
-                    <li style={listSyle}>
-                        <Link style={linkstyle} to={{ pathname: '/' }}>About us</Link>
-                    </li>
-                    <li style={listSyle}>
-                        <Link style={linkstyle} to={{ pathname: '/' }}>About us</Link>
-                    </li>
-                </ul>
-                <ul style={ulstyle}>
-                    <span style={spanstyle}>
-                        HealthCare
-                    </span>
-                    <li style={listSyle}>
-                        <Link style={linkstyle} to={{ pathname: '/' }}>About us</Link>
-                    </li>
-                    <li style={listSyle}>
-                        <Link style={linkstyle} to={{ pathname: '/' }}>About us</Link>
-                    </li>
-                    <li style={listSyle}>
-                        <Link style={linkstyle} to={{ pathname: '/' }}>About us</Link>
-                    </li>
-                    <li style={listSyle}>
-                        <Link style={linkstyle} to={{ pathname: '/' }}>About us</Link>
-                    </li>
-                </ul>
+
             </div>
             <div style={{ writingMode: 'vertical-rl', whiteSpace: 'nowrap', opacity: '0.5', color: '#777', fontSize: '12px', fontWeight: '400', letterSpacing: '0.3pt', lineHeight: '180%', textTransform: 'uppercase', position: 'absolute', top: '50%', left: '20px', transform: 'translateY(-50%) rotate(180deg)' }}>© SoonYeol BIO. All rights reserved.</div>
         </div ></>
