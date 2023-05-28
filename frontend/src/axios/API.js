@@ -27,3 +27,5 @@ const PostPrompt = (prompt) => {
 }
 
 export { GetPolicyNews, GetDrugNews, GetAnimalNews, GetAInews, GetAllnews, PostPrompt }
+
+

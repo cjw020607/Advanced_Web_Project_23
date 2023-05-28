@@ -111,5 +111,4 @@ public class CrawlingController {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
     }
-
 }

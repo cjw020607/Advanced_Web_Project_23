@@ -17,6 +17,7 @@ import org.jsoup.select.Elements;
 public class ImageCrawling {
     public Images imageCrawling(List<String> keywords) throws IOException, InterruptedException {
         List<String> imageUrls = new ArrayList<>();
+        Images images = new Images();
 
         String[] subUrls = {
                 "https://www.shutterstock.com/image-photo/earth-crystal-glass-globe-ball-260nw-1500154991.jpg",
@@ -47,9 +48,9 @@ public class ImageCrawling {
             System.out.println(imgUrl);
 
             imageUrls.add(imgUrl);
+            images.setKeyword(keyword);
         }
 
-        Images images = new Images();
         images.setImgurl(imageUrls);
 
         return images;
