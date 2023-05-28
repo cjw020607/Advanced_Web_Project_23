@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import gcu.backend.crawlingservice.model.News;
+import gcu.backend.crawlingservice.repository.ImageRespository;
 import gcu.backend.crawlingservice.model.Images;
 import gcu.backend.crawlingservice.model.Keyword;
 import gcu.backend.crawlingservice.service.NewsCrawling;
@@ -31,6 +32,7 @@ public class CrawlingController {
 
     final NewsCrawling newscrawling;
     final ImageCrawling imagecrawling;
+    final ImageRespository imageRespository;
 
     @GetMapping("/Allnews")
     @Operation(summary = "뉴스 크롤링", description = "최신 바이오 뉴스 크롤링 결과.")
@@ -102,6 +104,7 @@ public class CrawlingController {
             if (imageurl == null) {
                 return new ResponseEntity<>(HttpStatus.NOT_FOUND);
             }
+            imageRespository.save(imageurl);
             return new ResponseEntity<Images>(imageurl, HttpStatus.OK);
         } catch (Exception e) {
             log.info(e.toString());
