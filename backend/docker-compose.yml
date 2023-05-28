@@ -19,6 +19,7 @@ services:
       - -c
       - |
         ./wait-for-it.sh localhost:9761 -s -t 100
+        java -jar /app.jar
   crawling:
     container_name: crawling
     ports:
@@ -31,6 +32,7 @@ services:
       - -c
       - |
         ./wait-for-it.sh localhost:9003 -s -t 100
+        java -jar /app.jar
   asking:
     container_name: asking
     ports:
@@ -43,3 +45,4 @@ services:
       - -c
       - |
         ./wait-for-it.sh localhost:9002 -s -t 100
+        java -jar /app.jar
