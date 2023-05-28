@@ -21,6 +21,10 @@ public class ImageCrawling {
 
         List<String> Image = new ArrayList<>();
 
+        String[] Subimg = {
+                "https://www.shutterstock.com/image-photo/earth-crystal-glass-globe-ball-260nw-1500154991.jpg",
+                "https://www.shutterstock.com/ko/image-photo/dna-hologram-on-empty-classroom-background-2159708803?irclickid=XfWUGBSIOxyNUTk3CyyAnSYlUkASrCWvfXHr0g0&irgwc=1&utm_campaign=picjumbo%20%2F%20Viktor%20Hanacek&utm_content=560528&utm_medium=Affiliate&utm_source=1982588&utm_term=" };
+
         for (int i = 0; i < keyword.size(); i++) {
             // url date값 오늘 날짜 불러와서 넣으면 될듯 -> 최신뉴스 반영, 그날 그날 뉴스 반영
             // page값은 1페이지,2페이지,, 이렇게
@@ -55,10 +59,15 @@ public class ImageCrawling {
 
                 imgUrl = img.attr("src");
                 if (imgUrl.equals("")) {
-                    imgUrl = "https://www.shutterstock.com/image-photo/earth-crystal-glass-globe-ball-260nw-1500154991.jpg";
+                    double randomValue = Math.random();
+                    int val = (int) (randomValue * 1) + 1;
+                    imgUrl = Subimg[val].toString();
+
                 }
             } catch (Exception e) {
-                imgUrl = "https://www.shutterstock.com/image-photo/earth-crystal-glass-globe-ball-260nw-1500154991.jpg";
+                double randomValue = Math.random();
+                int val = (int) (randomValue * 1) + 1;
+                imgUrl = Subimg[val].toString();
             }
             System.out.println(imgUrl);
 
