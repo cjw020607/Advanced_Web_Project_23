@@ -2,8 +2,31 @@ version: "3"
 services:
   eureka:
     container_name: eureka
+    ports:
+      - "9761:9761"
     build:
       context: ./eureka_server
+      dockerfile: Dockerfile
+  api:
+    container_name: api
+    ports:
+      - "9003:9003"
+    build:
+      context: ./api-gateway
+      dockerfile: Dockerfile
+  crawling:
+    container_name: crawling
+    ports:
+      - "9002:9002"
+    build:
+      context: ./crawling-service
+      dockerfile: Dockerfile
+  asking:
+    container_name: asking
+    ports:
+      - "9001:9001"
+    build:
+      context: ./asking-service
       dockerfile: Dockerfile
   # api:
   #   container_name: api
