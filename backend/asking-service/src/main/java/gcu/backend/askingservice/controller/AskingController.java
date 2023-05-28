@@ -41,6 +41,11 @@ public class AskingController {
         return ResponseEntity.ok(chatGPT.generateText(request.getQuestion()));
     }
 
+    @GetMapping("/test")
+    public ResponseEntity<String> test() {
+        return ResponseEntity.ok("test");
+    }
+
     @PostMapping("/prompt")
     @Operation(summary = "prompt service", description = "prompt service입니다.")
     public ResponseEntity<Map<String, Map<String, Object>>> promptService(@RequestBody Request request) {

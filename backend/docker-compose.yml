@@ -28,8 +28,3 @@ services:
     build:
       context: ./asking-service
       dockerfile: Dockerfile
-  # api:
-  #   container_name: api
-  #   build:
-  #     context: ./api-gateway
-  #     dockerfile: Dockerfile
