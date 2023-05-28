@@ -43,7 +43,7 @@ public class AskingController {
 
     @GetMapping("/test")
     public ResponseEntity<String> test() {
-        return ResponseEntity.ok("test");
+        return ResponseEntity.ok("controll");
     }
 
     @PostMapping("/prompt")
