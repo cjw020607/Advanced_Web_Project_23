@@ -6,7 +6,7 @@ apikey: Bearer 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
 spring:
   data:
     mongodb:
-      host: 127.0.0.1
+      host: 43.201.81.76
       port: 27017
       database: soonyeolBio
   application:
@@ -18,11 +18,11 @@ spring:
 
 eureka:
     instance:
-        ip-address: 127.0.0.1
+        ip-address: 43.201.81.76
         prefer-ip-address: true
         lease-renewal-interval-in-seconds: 30
     client:
         registerWithEureka: true
         fetchRegistry: true
         serviceUrl:
-            defaultZone: http://localhost:9761/eureka/
+            defaultZone: http://43.201.81.76:9761/eureka/

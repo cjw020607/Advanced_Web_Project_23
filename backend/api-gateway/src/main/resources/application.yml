@@ -52,14 +52,14 @@ spring:
 
 eureka:
     instance:
-        ip-address: 127.0.0.1
+        ip-address: 43.201.81.76
         prefer-ip-address: true
         lease-renewal-interval-in-seconds: 30
     client:
         registerWithEureka: true
         fetchRegistry: true
         serviceUrl:
-            defaultZone: http://localhost:9761/eureka
+            defaultZone: http://43.201.81.76:9761/eureka
 
 springdoc:
     swagger-ui:
